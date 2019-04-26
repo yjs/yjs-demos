@@ -1,0 +1,31 @@
+{
+  "name": "yjs-demos",
+  "version": "0.0.0",
+  "private": true,
+  "description": "A collection of Yjs demos",
+  "scripts": {
+    "dist": "rollup -c",
+    "start": "rollup -c && node ./demo-server.js",
+    "start:production": "export PRODUCTION=1; rm -rf dist; rollup -c; gzip dist/* --keep; node ./demo-server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kevin Jahns <kevin.jahns@protonmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "node-static": "^0.7.11",
+    "prosemirror-example-setup": "^1.0.1",
+    "prosemirror-model": "^1.7.0",
+    "prosemirror-state": "^1.2.2",
+    "prosemirror-view": "^1.8.9",
+    "y-prosemirror": "0.0.0",
+    "y-websocket": "1.0.0-1",
+    "yjs": "^13.0.0-80"
+  },
+  "devDependencies": {
+    "rollup": "^1.10.1",
+    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-node-resolve": "^4.2.3",
+    "rollup-plugin-terser": "^4.0.4",
+    "serve": "^11.0.0"
+  }
+}
