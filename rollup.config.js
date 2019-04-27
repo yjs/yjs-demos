@@ -7,7 +7,7 @@ const minificationPlugins = process.env.PRODUCTION ? [terser({
   compress: {
     hoist_vars: true,
     module: true,
-    passes: 5,
+    passes: 1,
     pure_getters: true,
     unsafe_comps: true,
     unsafe_undefined: true
