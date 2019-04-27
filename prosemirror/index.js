@@ -13,6 +13,7 @@ window.addEventListener('load', () => {
   const provider = new WebsocketProvider(`${location.protocol === 'http:' ? 'ws:' : 'wss:'}${location.host}`)
   const ydocument = provider.get('prosemirror' /*, { gc: false } */)
   const type = ydocument.get('prosemirror', Y.XmlFragment)
+
   const prosemirrorView = new EditorView(document.querySelector('#editor'), {
     state: EditorState.create({
       schema,
