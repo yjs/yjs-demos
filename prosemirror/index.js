@@ -14,12 +14,17 @@ window.addEventListener('load', () => {
   const ydocument = provider.get('prosemirror' /*, { gc: false } */)
   const type = ydocument.get('prosemirror', Y.XmlFragment)
 
-  const prosemirrorView = new EditorView(document.querySelector('#editor'), {
+  const editor = document.createElement('div')
+  editor.setAttribute('id', 'editor')
+  const editorContainer = document.createElement('div')
+  editorContainer.insertBefore(editor, null)
+  const prosemirrorView = new EditorView(editor, {
     state: EditorState.create({
       schema,
       plugins: exampleSetup({ schema }).concat([prosemirrorPlugin(type), cursorPlugin])
     })
   })
+  document.body.insertBefore(editorContainer, null)
 
   const connectBtn = document.querySelector('.y-connect-btn')
   connectBtn.addEventListener('click', () => {
