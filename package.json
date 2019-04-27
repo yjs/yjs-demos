@@ -7,7 +7,8 @@
     "dist": "rollup -c",
     "start": "rollup -c && node ./demo-server.js",
     "start:production": "export PRODUCTION=1; rm -rf dist; rollup -c; gzip dist/* --keep; node ./demo-server.js",
-    "now-start": "export PRODUCTION=1 && rm -rf dist && rollup -c && node ./demo-server.js",
+    "now-build": "PRODUCTION=1 rollup -c",
+    "now-start": "PRODUCTION=1 node ./demo-server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Kevin Jahns <kevin.jahns@protonmail.com",
