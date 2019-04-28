@@ -19,9 +19,9 @@
     "prosemirror-model": "^1.7.0",
     "prosemirror-state": "^1.2.2",
     "prosemirror-view": "^1.8.9",
-    "y-prosemirror": "0.0.0",
-    "y-websocket": "1.0.0-1",
-    "yjs": "^13.0.0-80"
+    "y-prosemirror": "0.0.1",
+    "y-websocket": "1.0.0-2",
+    "yjs": "^13.0.0-81"
   },
   "devDependencies": {
     "rollup": "^1.10.1",
