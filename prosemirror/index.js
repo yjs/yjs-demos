@@ -10,8 +10,8 @@ import { exampleSetup } from 'prosemirror-example-setup'
 // import { noteHistoryPlugin } from './prosemirror-history.js'
 
 window.addEventListener('load', () => {
-  const provider = new WebsocketProvider(`${location.protocol === 'http:' ? 'ws:' : 'wss:'}${location.host}`)
-  const ydocument = provider.get('prosemirror' /*, { gc: false } */)
+  const ydocument = new Y.Doc()
+  const provider = new WebsocketProvider(`${location.protocol === 'http:' ? 'ws:' : 'wss:'}${location.host}`, 'prosemirror', ydocument)
   const type = ydocument.get('prosemirror', Y.XmlFragment)
 
   const editor = document.createElement('div')
