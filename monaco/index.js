@@ -24,9 +24,9 @@ self.MonacoEnvironment = {
 }
 
 window.addEventListener('load', () => {
-  const ydocument = new Y.Doc()
-  const provider = new WebsocketProvider(`${location.protocol === 'http:' ? 'ws:' : 'wss:'}${location.host}`, 'monaco', ydocument)
-  const type = ydocument.getText('monaco')
+  const ydoc = new Y.Doc()
+  const provider = new WebsocketProvider(`${location.protocol === 'http:' ? 'ws:' : 'wss:'}${location.host}`, 'monaco', ydoc)
+  const type = ydoc.getText('monaco')
 
   const editor = monaco.editor.create(document.getElementById('monaco-editor'), {
     value: '',
@@ -37,14 +37,14 @@ window.addEventListener('load', () => {
 
   const connectBtn = document.querySelector('.y-connect-btn')
   connectBtn.addEventListener('click', () => {
-    if (ydocument.wsconnected) {
-      ydocument.disconnect()
+    if (provider.wsconnected) {
+      provider.disconnect()
       connectBtn.textContent = 'Connect'
     } else {
-      ydocument.connect()
+      provider.connect()
       connectBtn.textContent = 'Disconnect'
     }
   })
 
-  window.example = { provider, ydocument, type, monacoBinding }
+  window.example = { provider, ydoc, type, monacoBinding }
 })

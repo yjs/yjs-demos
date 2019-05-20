@@ -9,7 +9,7 @@
     "watch": "concurrently 'rollup -wc' 'webpack -w'",
     "start": "npm run dist && node ./demo-server.js",
     "start:production": "export PRODUCTION=1; npm run dist:production; gzip dist/* --keep; node ./demo-server.js",
-    "now-build": "PRODUCTION=1 rollup -c",
+    "now-build": "npm run dist:production",
     "now-start": "PRODUCTION=1 node ./demo-server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "standard"
