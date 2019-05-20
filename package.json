@@ -4,30 +4,43 @@
   "private": true,
   "description": "A collection of Yjs demos",
   "scripts": {
-    "dist": "rollup -c",
-    "start": "rollup -c && node ./demo-server.js",
-    "start:production": "export PRODUCTION=1; rm -rf dist; rollup -c; gzip dist/* --keep; node ./demo-server.js",
+    "dist": "rm -rf dist && rollup -c && webpack",
+    "dist:production": "rm -rf dist && PRODUCTION=1 rollup -c && webpack --mode=production",
+    "watch": "concurrently 'rollup -wc' 'webpack -w'",
+    "start": "npm run dist && node ./demo-server.js",
+    "start:production": "export PRODUCTION=1; npm run dist:production; gzip dist/* --keep; node ./demo-server.js",
     "now-build": "PRODUCTION=1 rollup -c",
     "now-start": "PRODUCTION=1 node ./demo-server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "standard"
   },
   "author": "Kevin Jahns <kevin.jahns@protonmail.com",
   "license": "MIT",
   "dependencies": {
+    "monaco-editor": "^0.17.0",
     "node-static": "^0.7.11",
     "prosemirror-example-setup": "^1.0.1",
     "prosemirror-model": "^1.7.0",
     "prosemirror-state": "^1.2.2",
     "prosemirror-view": "^1.8.9",
-    "y-prosemirror": "0.0.2",
-    "y-websocket": "1.0.0-3",
-    "yjs": "^13.0.0-82"
+    "rollup-plugin-postcss": "^2.0.3",
+    "ws": "^7.0.0",
+    "y-monaco": "0.0.1",
+    "y-prosemirror": "0.0.3",
+    "y-websocket": "1.0.0-5",
+    "yjs": "^13.0.0-84"
   },
   "devDependencies": {
+    "concurrently": "^4.1.0",
+    "css-loader": "^2.1.1",
     "rollup": "^1.10.1",
-    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-commonjs": "8.3.0",
     "rollup-plugin-node-resolve": "^4.2.3",
     "rollup-plugin-terser": "^4.0.4",
-    "serve": "^11.0.0"
+    "serve": "^11.0.0",
+    "standard": "^12.0.1",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2"
   }
 }

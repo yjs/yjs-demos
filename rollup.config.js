@@ -2,6 +2,40 @@ import nodeResolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 import { terser } from 'rollup-plugin-terser'
 
+const customModules = new Set([
+  'y-websocket',
+  'y-codemirror',
+  'y-ace',
+  'y-textarea',
+  'y-quill',
+  'y-dom',
+  'y-prosemirror',
+  'y-monaco'
+])
+/**
+ * @type {Set<any>}
+ */
+const customLibModules = new Set([
+  'lib0',
+  'y-protocols'
+])
+
+// @ts-ignore We use this for debugging
+const debugResolve = {
+  resolveId (importee) {
+    if (importee === 'yjs') {
+      return `${process.cwd()}/../yjs/src/index.js`
+    }
+    if (customModules.has(importee.split('/')[0])) {
+      return `${process.cwd()}/../${importee}/src/${importee}.js`
+    }
+    if (customLibModules.has(importee.split('/')[0])) {
+      return `${process.cwd()}/../${importee}`
+    }
+    return null
+  }
+}
+
 const minificationPlugins = process.env.PRODUCTION ? [terser({
   module: true,
   compress: {
@@ -29,10 +63,10 @@ export default [{
     }
   }],
   plugins: [
+    // debugResolve,
     nodeResolve({
       sourcemap: true,
-      module: false,
-      browser: true
+      mainFields: ['module', 'browser', 'main']
     }),
     commonjs(),
     ...minificationPlugins

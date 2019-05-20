@@ -21,7 +21,7 @@ window.addEventListener('load', () => {
   const prosemirrorView = new EditorView(editor, {
     state: EditorState.create({
       schema,
-      plugins: exampleSetup({ schema }).concat([prosemirrorPlugin(type), cursorPlugin])
+      plugins: exampleSetup({ schema }).concat([prosemirrorPlugin(type), cursorPlugin(provider.awareness)])
     })
   })
   document.body.insertBefore(editorContainer, null)
