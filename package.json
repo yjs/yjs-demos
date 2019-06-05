@@ -26,9 +26,9 @@
     "rollup-plugin-postcss": "^2.0.3",
     "ws": "^7.0.0",
     "y-monaco": "0.0.1",
-    "y-prosemirror": "0.0.3",
+    "y-prosemirror": "0.0.4",
     "y-websocket": "1.0.0-5",
-    "yjs": "^13.0.0-84"
+    "yjs": "^13.0.0-88"
   },
   "devDependencies": {
     "concurrently": "^4.1.0",
