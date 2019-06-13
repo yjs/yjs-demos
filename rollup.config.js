@@ -2,6 +2,10 @@ import nodeResolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 import { terser } from 'rollup-plugin-terser'
 
+// If truthy, it expects all y-* dependencies in the upper directory.
+// This is only necessary if you want to test and make changes to several repositories.
+const localImports = process.env.LOCALIMPORTS
+
 const customModules = new Set([
   'y-websocket',
   'y-codemirror',
@@ -23,14 +27,16 @@ const customLibModules = new Set([
 // @ts-ignore We use this for debugging
 const debugResolve = {
   resolveId (importee) {
-    if (importee === 'yjs') {
-      return `${process.cwd()}/../yjs/src/index.js`
-    }
-    if (customModules.has(importee.split('/')[0])) {
-      return `${process.cwd()}/../${importee}/src/${importee}.js`
-    }
-    if (customLibModules.has(importee.split('/')[0])) {
-      return `${process.cwd()}/../${importee}`
+    if (localImports) {
+      if (importee === 'yjs') {
+        return `${process.cwd()}/../yjs/src/index.js`
+      }
+      if (customModules.has(importee.split('/')[0])) {
+        return `${process.cwd()}/../${importee}/src/${importee}.js`
+      }
+      if (customLibModules.has(importee.split('/')[0])) {
+        return `${process.cwd()}/../${importee}`
+      }
     }
     return null
   }
@@ -51,24 +57,33 @@ const minificationPlugins = process.env.PRODUCTION ? [terser({
   }
 })] : []
 
+const plugins = [
+  debugResolve,
+  nodeResolve({
+    sourcemap: true,
+    mainFields: ['module', 'browser', 'main']
+  }),
+  commonjs(),
+  ...minificationPlugins
+]
+
 export default [{
   input: './prosemirror/index.js',
-  output: [{
-    name: 'prosemirror',
+  output: {
     file: 'dist/prosemirror.js',
     format: 'iife',
     sourcemap: true,
     globals: {
       'crypto': 'null'
     }
-  }],
-  plugins: [
-    // debugResolve,
-    nodeResolve({
-      sourcemap: true,
-      mainFields: ['module', 'browser', 'main']
-    }),
-    commonjs(),
-    ...minificationPlugins
-  ]
+  },
+  plugins
+}, {
+  input: './quill/index.js',
+  output: {
+    file: 'dist/quill.js',
+    format: 'iife',
+    sourcemap: true
+  },
+  plugins
 }]
