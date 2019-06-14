@@ -4,8 +4,8 @@
   "private": true,
   "description": "A collection of Yjs demos",
   "scripts": {
-    "dist": "rm -rf dist && rollup -c && webpack",
-    "dist:production": "rm -rf dist && PRODUCTION=1 rollup -c && webpack --mode=production",
+    "dist": "rm -rf dist && rollup -c && webpack && cd prosemirror-atlaskit && npm run dist",
+    "dist:production": "rm -rf dist && PRODUCTION=1 rollup -c && webpack --mode=production && cd prosemirror-atlaskit && npm run dist:production",
     "watch": "concurrently 'rollup -wc' 'webpack -w'",
     "start": "npm run dist && node ./demo-server.js",
     "start:production": "export PRODUCTION=1; npm run dist:production; gzip dist/* --keep; node ./demo-server.js",
@@ -34,10 +34,10 @@
     "rollup-plugin-postcss": "^2.0.3",
     "ws": "^7.0.0",
     "y-monaco": "0.0.1",
-    "y-prosemirror": "0.0.4",
+    "y-prosemirror": "0.0.5",
     "y-quill": "0.0.2",
     "y-websocket": "1.0.0-5",
-    "yjs": "^13.0.0-89"
+    "yjs": "^13.0.0-90"
   },
   "devDependencies": {
     "concurrently": "^4.1.0",

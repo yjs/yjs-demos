@@ -1,0 +1,35 @@
+{
+  "name": "prosemirror-atlaskit-demo",
+  "private": true,
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dist": "webpack",
+    "dist:production": "npm i && webpack --mode=production"
+  },
+  "author": "",
+  "license": "ISC",
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "dependencies": {
+    "@atlaskit/editor-core": "^112.13.6",
+    "@atlaskit/media-core": "^30.0.5",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-intl": "^2.9.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "rollup-plugin-jsx": "^1.0.3",
+    "webpack-cli": "^3.3.4"
+  }
+}
