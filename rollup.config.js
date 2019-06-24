@@ -6,6 +6,10 @@ import { terser } from 'rollup-plugin-terser'
 // This is only necessary if you want to test and make changes to several repositories.
 const localImports = process.env.LOCALIMPORTS
 
+if (localImports) {
+  console.info('Using local imports')
+}
+
 const customModules = new Set([
   'y-websocket',
   'y-codemirror',

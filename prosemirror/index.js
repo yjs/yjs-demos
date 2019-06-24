@@ -2,12 +2,12 @@
 
 import * as Y from 'yjs'
 import { WebsocketProvider } from 'y-websocket'
-import { prosemirrorPlugin, cursorPlugin } from 'y-prosemirror'
+import { ySyncPlugin, yCursorPlugin, yUndoPlugin, undo, redo } from 'y-prosemirror'
 import { EditorState } from 'prosemirror-state'
 import { EditorView } from 'prosemirror-view'
 import { schema } from './schema.js'
 import { exampleSetup } from 'prosemirror-example-setup'
-// import { noteHistoryPlugin } from './prosemirror-history.js'
+import { keymap } from 'prosemirror-keymap'
 
 window.addEventListener('load', () => {
   const ydoc = new Y.Doc()
@@ -21,7 +21,16 @@ window.addEventListener('load', () => {
   const prosemirrorView = new EditorView(editor, {
     state: EditorState.create({
       schema,
-      plugins: exampleSetup({ schema }).concat([prosemirrorPlugin(type), cursorPlugin(provider.awareness)])
+      plugins: [
+        ySyncPlugin(type),
+        yCursorPlugin(provider.awareness),
+        yUndoPlugin,
+        keymap({
+          'Mod-z': undo,
+          'Mod-y': redo,
+          'Mod-Shift-z': redo
+        })
+      ].concat(exampleSetup({ schema }))
     })
   })
   document.body.insertBefore(editorContainer, null)

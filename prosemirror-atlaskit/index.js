@@ -4,7 +4,7 @@ import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import * as Y from 'yjs'
 import { WebsocketProvider } from 'y-websocket'
-import { prosemirrorPlugin, cursorPlugin } from 'y-prosemirror'
+import { ySyncPlugin, yCursorPlugin } from 'y-prosemirror'
 
 import {
   Editor,
@@ -43,12 +43,12 @@ window.addEventListener('load', () => {
           {
             name: 'y-shared-content',
             plugin: function (_a) {
-              return prosemirrorPlugin(type)
+              return ySyncPlugin(type)
             }
           }, {
             name: 'y-shared-cursors',
             plugin: function (_a) {
-              return cursorPlugin(provider.awareness)
+              return yCursorPlugin(provider.awareness)
             }
           }
         ]

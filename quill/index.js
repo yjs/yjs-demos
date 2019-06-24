@@ -23,7 +23,10 @@ window.addEventListener('load', () => {
         [{ header: [1, 2, false] }],
         ['bold', 'italic', 'underline'],
         ['image', 'code-block']
-      ]
+      ],
+      history: {
+        userOnly: true
+      }
     },
     placeholder: 'Start collaborating...',
     theme: 'snow' // or 'bubble'

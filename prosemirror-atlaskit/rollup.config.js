@@ -59,7 +59,7 @@ const minificationPlugins = process.env.PRODUCTION ? [terser({
 })] : []
 
 const plugins = [
-  jsx({factory: 'React.createElement'}),
+  jsx({ factory: 'React.createElement' }),
   debugResolve,
   nodeResolve({
     sourcemap: true,
