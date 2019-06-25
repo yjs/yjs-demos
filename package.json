@@ -37,7 +37,7 @@
     "y-prosemirror": "0.0.6",
     "y-quill": "0.0.2",
     "y-websocket": "1.0.0-5",
-    "yjs": "^13.0.0-93"
+    "yjs": "^13.0.0-94"
   },
   "devDependencies": {
     "concurrently": "^4.1.0",
