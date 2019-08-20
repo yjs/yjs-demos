@@ -22,6 +22,15 @@ module.exports = {
     }]
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx']
+    extensions: ['*', '.js', '.jsx'],
+    /*
+    alias: {
+      yjs: path.resolve(__dirname, '../../yjs'),
+      'y-prosemirror': path.resolve(__dirname, '../../y-prosemirror'),
+      lib0: path.resolve(__dirname, '../../lib0'),
+      'y-protocols': path.resolve(__dirname, '../../y-protocols'),
+      'y-websocket': path.resolve(__dirname, '../../y-websocket')
+    }
+    */
   }
 }

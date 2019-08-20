@@ -34,10 +34,10 @@
     "rollup-plugin-postcss": "^2.0.3",
     "ws": "^7.0.1",
     "y-monaco": "0.0.1",
-    "y-prosemirror": "0.0.8",
+    "y-prosemirror": "0.0.10",
     "y-quill": "0.0.2",
-    "y-websocket": "1.0.0-5",
-    "yjs": "^13.0.0-94"
+    "y-websocket": "1.0.0-6",
+    "yjs": "^13.0.0-96"
   },
   "devDependencies": {
     "concurrently": "^4.1.0",

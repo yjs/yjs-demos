@@ -4,7 +4,9 @@ import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import * as Y from 'yjs'
 import { WebsocketProvider } from 'y-websocket'
-import { ySyncPlugin, yCursorPlugin } from 'y-prosemirror'
+import { ySyncPlugin, yCursorPlugin, yUndoPlugin, undo, redo } from 'y-prosemirror'
+
+import { keymap } from 'prosemirror-keymap'
 
 import {
   Editor,
@@ -19,7 +21,7 @@ window.addEventListener('load', () => {
 
   const connectBtn = document.querySelector('.y-connect-btn')
   connectBtn.addEventListener('click', () => {
-    if (provider.wsconnected) {
+    if (provider.shouldConnect) {
       provider.disconnect()
       connectBtn.textContent = 'Connect'
     } else {
@@ -50,6 +52,16 @@ window.addEventListener('load', () => {
             plugin: function (_a) {
               return yCursorPlugin(provider.awareness)
             }
+          }, {
+            name: 'y-undo-plugin',
+            plugin: yUndoPlugin
+          }, {
+            name: 'y-undo-keymaps',
+            plugin: () => keymap({
+              'Mod-z': undo,
+              'Mod-y': redo,
+              'Mod-Shift-z': redo
+            })
           }
         ]
       }

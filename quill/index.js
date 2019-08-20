@@ -45,7 +45,7 @@ window.addEventListener('load', () => {
 
   const connectBtn = document.querySelector('.y-connect-btn')
   connectBtn.addEventListener('click', () => {
-    if (provider.wsconnected) {
+    if (provider.shouldConnect) {
       provider.disconnect()
       connectBtn.textContent = 'Connect'
     } else {
