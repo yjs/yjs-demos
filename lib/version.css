@@ -1,0 +1,74 @@
+#y-version {
+  position: relative;
+}
+
+.version-modal[hidden] {
+  display: none;
+}
+
+.version-modal:not([hidden]) {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: 300px;
+  min-height: 300px;
+  height: fit-content;
+  z-index: 20;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 11px;
+  border-top-right-radius: 0;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+.version-modal > button {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.version-list {
+  line-height: 30px;
+  padding: 0 8px;
+  cursor: pointer;
+}
+
+.version-list:hover {
+  background-color: #eee;
+}
+
+[ychange_state] {
+  position: relative;
+}
+[ychange_state]:hover::before {
+  content: attr(ychange_user);
+  background-color: #fa8100;
+  position: absolute;
+  top: -14px;
+  left: 0;
+  font-size: 12px;
+  padding: 0 2px;
+  border-radius: 3px 3px 0 0;
+  color: #fdfdfe;
+  user-select: none;
+  word-break: normal;
+}
+*[ychange_state='added'] {
+  background-color: #fa810088;
+}
+ychange[ychange_state='removed'] {
+  color: #fa8100;
+}
+p[ychange_state='removed'] {
+  color: #fa8100;
+  text-decoration: line-through;
+}
+p[ychange_state='removed'] > br {
+  display: none;
+}
+*:not(ychange):not(p)[ychange_state='removed'] {
+  background-color: #ff5a56;
+}
+img[ychange_state='removed'] {
+  padding: 2px;
+}

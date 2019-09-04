@@ -83,6 +83,17 @@ export default [{
   },
   plugins
 }, {
+  input: './prosemirror-versions/index.js',
+  output: {
+    file: 'dist/prosemirror-versions.js',
+    format: 'iife',
+    sourcemap: true,
+    globals: {
+      'crypto': 'null'
+    }
+  },
+  plugins
+}, {
   input: './quill/index.js',
   output: {
     file: 'dist/quill.js',
