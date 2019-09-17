@@ -35,7 +35,7 @@ window.addEventListener('load', () => {
   })
   const monacoBinding = new MonacoBinding(type, editor.getModel(), new Set([editor]), provider.awareness)
 
-  const connectBtn = document.querySelector('.y-connect-btn')
+  const connectBtn = document.getElementById('y-connect-btn')
   connectBtn.addEventListener('click', () => {
     if (provider.shouldConnect) {
       provider.disconnect()

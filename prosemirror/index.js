@@ -35,7 +35,7 @@ window.addEventListener('load', () => {
   })
   document.body.insertBefore(editorContainer, null)
 
-  const connectBtn = document.querySelector('.y-connect-btn')
+  const connectBtn = document.getElementById('y-connect-btn')
   connectBtn.addEventListener('click', () => {
     if (provider.shouldConnect) {
       provider.disconnect()

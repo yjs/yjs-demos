@@ -2,14 +2,34 @@ import { Schema } from 'prosemirror-model'
 
 const brDOM = ['br']
 
+const calcYChangeStyle = ychange => {
+  switch (ychange.type) {
+    case 'removed':
+      return `color:${ychange.color.dark}`
+    case 'added':
+      return `background-color:${ychange.color.light}`
+    case null:
+      return ''
+  }
+}
+
 const calcYchangeDomAttrs = (attrs, domAttrs = {}) => {
   domAttrs = Object.assign({}, domAttrs)
   if (attrs.ychange !== null) {
     domAttrs.ychange_user = attrs.ychange.user
-    domAttrs.ychange_state = attrs.ychange.state
+    domAttrs.ychange_type = attrs.ychange.type
+    domAttrs.ychange_color = attrs.ychange.color.light
+    domAttrs.style = calcYChangeStyle(attrs.ychange)
   }
   return domAttrs
 }
+
+/**
+ * @param {any} ychange
+ * @param {Array<any>}
+ */
+const hoverWrapper = (ychange, els) =>
+  ychange === null ? els : [['span', { class: 'ychange-hover', style: `background-color:${ychange.color.dark}` }, ychange.user || 'unknown'], ['span', ...els]]
 
 // :: Object
 // [Specs](#model.NodeSpec) for the nodes defined in this schema.
@@ -26,7 +46,7 @@ export const nodes = {
     content: 'inline*',
     group: 'block',
     parseDOM: [{ tag: 'p' }],
-    toDOM (node) { return ['p', calcYchangeDomAttrs(node.attrs), 0] }
+    toDOM (node) { return ['p', calcYchangeDomAttrs(node.attrs), ...hoverWrapper(node.attrs.ychange, [0])] }
   },
 
   // :: NodeSpec A blockquote (`<blockquote>`) wrapping one or more blocks.
@@ -36,7 +56,7 @@ export const nodes = {
     group: 'block',
     defining: true,
     parseDOM: [{ tag: 'blockquote' }],
-    toDOM (node) { return ['blockquote', calcYchangeDomAttrs(node.attrs), 0] }
+    toDOM (node) { return ['blockquote', calcYchangeDomAttrs(node.attrs), ...hoverWrapper(node.attrs.ychange, [0])] }
   },
 
   // :: NodeSpec A horizontal rule (`<hr>`).
@@ -45,7 +65,7 @@ export const nodes = {
     group: 'block',
     parseDOM: [{ tag: 'hr' }],
     toDOM (node) {
-      return ['hr', calcYchangeDomAttrs(node.attrs)]
+      return ['hr', calcYchangeDomAttrs(node.attrs), ...hoverWrapper(node.attrs.ychange, [])]
     }
   },
 
@@ -66,7 +86,7 @@ export const nodes = {
       { tag: 'h4', attrs: { level: 4 } },
       { tag: 'h5', attrs: { level: 5 } },
       { tag: 'h6', attrs: { level: 6 } }],
-    toDOM (node) { return ['h' + node.attrs.level, calcYchangeDomAttrs(node.attrs), 0] }
+    toDOM (node) { return ['h' + node.attrs.level, calcYchangeDomAttrs(node.attrs), ...hoverWrapper(node.attrs.ychange, [0])] }
   },
 
   // :: NodeSpec A code listing. Disallows marks or non-text inline
@@ -80,7 +100,7 @@ export const nodes = {
     code: true,
     defining: true,
     parseDOM: [{ tag: 'pre', preserveWhitespace: 'full' }],
-    toDOM (node) { return ['pre', calcYchangeDomAttrs(node.attrs), ['code', 0]] }
+    toDOM (node) { return ['pre', calcYchangeDomAttrs(node.attrs), ...hoverWrapper(node.attrs.ychange, [['code', 0]])] }
   },
 
   // :: NodeSpec The text node.
@@ -115,7 +135,7 @@ export const nodes = {
         title: node.attrs.title,
         alt: node.attrs.alt
       }
-      return ['img', calcYchangeDomAttrs(node.attrs, domAttrs)]
+      return ['img', calcYchangeDomAttrs(node.attrs, domAttrs), ...hoverWrapper(node.attrs.ychange, [])]
     }
   },
 
@@ -176,12 +196,13 @@ export const marks = {
   ychange: {
     attrs: {
       user: { default: null },
-      state: { default: null }
+      type: { default: null },
+      color: { default: null }
     },
     inclusive: false,
     parseDOM: [{ tag: 'ychange' }],
     toDOM (node) {
-      return ['ychange', { ychange_user: node.attrs.user, ychange_state: node.attrs.state }, 0]
+      return ['ychange', { ychange_user: node.attrs.user, ychange_type: node.attrs.type, style: calcYChangeStyle(node.attrs), ychange_color: node.attrs.color.light }, ...hoverWrapper(node.attrs, [0])]
     }
   }
 }
