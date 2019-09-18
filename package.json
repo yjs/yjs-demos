@@ -37,7 +37,7 @@
     "y-monaco": "0.0.1",
     "y-prosemirror": "^0.1.2",
     "y-quill": "0.0.2",
-    "y-websocket": "^1.0.0",
+    "y-websocket": "^1.0.2",
     "yjs": "^13.0.0-98",
     "lib0": "^0.1.1"
   },

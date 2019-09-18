@@ -29,7 +29,7 @@ const calcYchangeDomAttrs = (attrs, domAttrs = {}) => {
  * @param {Array<any>}
  */
 const hoverWrapper = (ychange, els) =>
-  ychange === null ? els : [['span', { class: 'ychange-hover', style: `background-color:${ychange.color.dark}` }, ychange.user || 'unknown'], ['span', ...els]]
+  ychange === null ? els : [['span', { class: 'ychange-hover', style: `background-color:${ychange.color.dark}` }, ychange.user || 'Unknown'], ['span', ...els]]
 
 // :: Object
 // [Specs](#model.NodeSpec) for the nodes defined in this schema.
