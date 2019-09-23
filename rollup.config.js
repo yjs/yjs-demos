@@ -101,4 +101,12 @@ export default [{
     sourcemap: true
   },
   plugins
+}, {
+  input: './codemirror/index.js',
+  output: {
+    file: 'dist/codemirror.js',
+    format: 'iife',
+    sourcemap: true
+  },
+  plugins
 }]
