@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Yjs CodeMirror Example</title>
+    <script type="text/javascript" src="../dist/codemirror.js" async></script>
+    <link rel=stylesheet href="https://codemirror.net/lib/codemirror.css"  async defer>
+    <style>
+      .remote-caret {
+        position: absolute;
+        border-left: black;
+        border-left-style: solid;
+        border-left-width: 2px;
+        height: 1em;
+      }
+      .remote-caret > div {
+        position: relative;
+        top: -1.05em;
+        font-size: 13px;
+        background-color: rgb(250, 129, 0);
+        font-family: serif;
+        font-style: normal;
+        font-weight: normal;
+        line-height: normal;
+        user-select: none;
+        color: white;
+        padding-left: 2px;
+        padding-right: 2px;
+        z-index: 3;
+      }
+      </style>
+  </head>
+  <body>
+    <button type="button" id="y-connect-btn">Disconnect</button>
+    <p></p>
+    <p>
+      This is a demo of the <a href="https://github.com/yjs/yjs">Yjs</a> ⇔
+      <a href="https://codemirror.net">CodeMirror</a> binding:
+      <a href="https://github.com/yjs/y-codemirror">y-codemirror</a>.
+    </p>
+    <p>
+      The content of this editor is shared with every client that visits this
+      domain.
+    </p>
+  </body>
+</html>
