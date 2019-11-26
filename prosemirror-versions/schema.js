@@ -46,7 +46,14 @@ export const nodes = {
     content: 'inline*',
     group: 'block',
     parseDOM: [{ tag: 'p' }],
-    toDOM (node) { return ['p', calcYchangeDomAttrs(node.attrs), ...hoverWrapper(node.attrs.ychange, [0])] }
+    toDOM (node) {
+      // only render changes if no child nodes
+      const renderChanges = node.content.size === 0
+      const attrs = renderChanges ? calcYchangeDomAttrs(node.attrs) : node.attrs
+      const defChildren = [0]
+      const children = renderChanges ? hoverWrapper(node.attrs.ychange, defChildren) : defChildren
+      return ['p', attrs, ...children]
+    }
   },
 
   // :: NodeSpec A blockquote (`<blockquote>`) wrapping one or more blocks.

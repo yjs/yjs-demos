@@ -55,13 +55,16 @@
   user-select: none;
   word-break: normal;
 }
+
 ychange[ychange_type='removed'], p[ychange_type='removed'] {
   text-decoration: line-through;
 }
+/*
 p[ychange_type='removed'] > span > br {
   display: none;
 }
-*:not(ychange):not(p)[ychange_type='removed'] {
+*/
+*:not(ychange)[ychange_type='removed'] {
   background-color: #ff5a56;
   color: inherit !important;
 }
