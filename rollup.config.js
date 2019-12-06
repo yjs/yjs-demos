@@ -12,6 +12,7 @@ if (localImports) {
 
 const customModules = new Set([
   'y-websocket',
+  'y-webrtc',
   'y-codemirror',
   'y-ace',
   'y-textarea',
@@ -86,6 +87,17 @@ export default [{
   input: './prosemirror-versions/index.js',
   output: {
     file: 'dist/prosemirror-versions.js',
+    format: 'iife',
+    sourcemap: true,
+    globals: {
+      'crypto': 'null'
+    }
+  },
+  plugins
+}, {
+  input: './prosemirror-versions-webrtc/index.js',
+  output: {
+    file: 'dist/prosemirror-versions-webrtc.js',
     format: 'iife',
     sourcemap: true,
     globals: {
