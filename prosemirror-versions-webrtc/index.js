@@ -29,7 +29,7 @@ const ydoc = new Y.Doc()
 const permanentUserData = new Y.PermanentUserData(ydoc)
 permanentUserData.setUserMapping(ydoc, ydoc.clientID, user.username)
 ydoc.gc = false
-const provider = new WebrtcProvider('prosemirror-versions', ydoc)
+const provider = new WebrtcProvider('prosemirror-versions-webrtc', ydoc)
 
 window.addEventListener('load', () => {
   const type = ydoc.get('prosemirror', Y.XmlFragment)

@@ -27,7 +27,7 @@
     "codemirror": "^5.49.2",
     "concurrently": "^4.1.2",
     "css-loader": "^2.1.1",
-    "lib0": "^0.1.5",
+    "lib0": "^0.1.6",
     "lit-html": "^1.1.2",
     "monaco-editor": "^0.17.1",
     "node-static": "^0.7.11",
@@ -52,7 +52,7 @@
     "y-monaco": "0.0.1",
     "y-prosemirror": "^0.1.5",
     "y-quill": "0.0.2",
-    "y-webrtc": "^9.0.3",
+    "y-webrtc": "^10.0.0",
     "y-websocket": "^1.0.7",
     "yjs": "^13.0.0-102"
   }
