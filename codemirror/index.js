@@ -1,9 +1,10 @@
 /* eslint-env browser */
 
+// @ts-ignore
+import CodeMirror from 'codemirror'
 import * as Y from 'yjs'
 import { WebsocketProvider } from 'y-websocket'
 import { CodeMirrorBinding } from 'y-codemirror'
-import CodeMirror from 'codemirror'
 import 'codemirror/mode/javascript/javascript.js'
 
 window.addEventListener('load', () => {
@@ -25,7 +26,7 @@ window.addEventListener('load', () => {
 
   const binding = new CodeMirrorBinding(yText, editor, provider.awareness)
 
-  const connectBtn = document.getElementById('y-connect-btn')
+  const connectBtn = /** @type {HTMLElement} */ (document.getElementById('y-connect-btn'))
   connectBtn.addEventListener('click', () => {
     if (provider.shouldConnect) {
       provider.disconnect()
@@ -36,5 +37,6 @@ window.addEventListener('load', () => {
     }
   })
 
+  // @ts-ignore
   window.example = { provider, ydoc, yText, binding }
 })

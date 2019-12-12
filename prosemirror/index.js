@@ -12,7 +12,7 @@ import { keymap } from 'prosemirror-keymap'
 window.addEventListener('load', () => {
   const ydoc = new Y.Doc()
   const provider = new WebsocketProvider(`${location.protocol === 'http:' ? 'ws:' : 'wss:'}${location.host}`, 'prosemirror', ydoc)
-  const type = ydoc.get('prosemirror', Y.XmlFragment)
+  const type = ydoc.getXmlFragment('prosemirror')
 
   const editor = document.createElement('div')
   editor.setAttribute('id', 'editor')
@@ -35,7 +35,7 @@ window.addEventListener('load', () => {
   })
   document.body.insertBefore(editorContainer, null)
 
-  const connectBtn = document.getElementById('y-connect-btn')
+  const connectBtn = /** @type {HTMLElement} */ (document.getElementById('y-connect-btn'))
   connectBtn.addEventListener('click', () => {
     if (provider.shouldConnect) {
       provider.disconnect()
@@ -46,5 +46,6 @@ window.addEventListener('load', () => {
     }
   })
 
+  // @ts-ignore
   window.example = { provider, ydoc, type, prosemirrorView }
 })

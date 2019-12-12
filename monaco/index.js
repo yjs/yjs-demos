@@ -5,7 +5,8 @@ import { WebsocketProvider } from 'y-websocket'
 import { MonacoBinding } from 'y-monaco'
 import * as monaco from 'monaco-editor'
 
-self.MonacoEnvironment = {
+// @ts-ignore
+window.MonacoEnvironment = {
   getWorkerUrl: function (moduleId, label) {
     if (label === 'json') {
       return '/dist/json.worker.bundle.js'
@@ -28,14 +29,14 @@ window.addEventListener('load', () => {
   const provider = new WebsocketProvider(`${location.protocol === 'http:' ? 'ws:' : 'wss:'}${location.host}`, 'monaco', ydoc)
   const type = ydoc.getText('monaco')
 
-  const editor = monaco.editor.create(document.getElementById('monaco-editor'), {
+  const editor = monaco.editor.create(/** @type {HTMLElement} */ (document.getElementById('monaco-editor')), {
     value: '',
     language: 'javascript',
     theme: 'vs-dark'
   })
-  const monacoBinding = new MonacoBinding(type, editor.getModel(), new Set([editor]), provider.awareness)
+  const monacoBinding = new MonacoBinding(type, /** @type {monaco.editor.ITextModel} */ (editor.getModel()), new Set([editor]), provider.awareness)
 
-  const connectBtn = document.getElementById('y-connect-btn')
+  const connectBtn = /** @type {HTMLElement} */ (document.getElementById('y-connect-btn'))
   connectBtn.addEventListener('click', () => {
     if (provider.shouldConnect) {
       provider.disconnect()
@@ -46,5 +47,6 @@ window.addEventListener('load', () => {
     }
   })
 
+  // @ts-ignore
   window.example = { provider, ydoc, type, monacoBinding }
 })

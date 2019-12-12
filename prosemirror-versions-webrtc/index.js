@@ -32,7 +32,7 @@ ydoc.gc = false
 const provider = new WebrtcProvider('prosemirror-versions-webrtc', ydoc)
 
 window.addEventListener('load', () => {
-  const type = ydoc.get('prosemirror', Y.XmlFragment)
+  const type = ydoc.getXmlFragment('prosemirror')
 
   const editor = document.createElement('div')
   editor.setAttribute('id', 'editor')
@@ -55,9 +55,9 @@ window.addEventListener('load', () => {
   })
   document.body.insertBefore(editorContainer, null)
 
-  attachVersion(document.getElementById('y-version'), ydoc, prosemirrorView)
+  attachVersion(/** @type {HTMLElement} */ (document.getElementById('y-version')), ydoc, prosemirrorView)
 
-  const connectBtn = document.getElementById('y-connect-btn')
+  const connectBtn = /** @type {HTMLElement} */ (document.getElementById('y-connect-btn'))
   connectBtn.addEventListener('click', () => {
     if (provider.shouldConnect) {
       provider.disconnect()
@@ -68,5 +68,8 @@ window.addEventListener('load', () => {
     }
   })
 
+  provider.on('peers', change => { console.log(change) })
+
+  // @ts-ignore
   window.example = { provider, ydoc, type, prosemirrorView }
 })
