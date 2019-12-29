@@ -17,15 +17,13 @@
       "/node_modules"
     ]
   },
-  "devDependencies": {
+  "dependencies": {
     "codemirror-demo": "./codemirror",
     "monaco-demo": "./monaco",
     "prosemirror-demo": "./prosemirror",
     "prosemirror-versions-demo": "./prosemirror-versions",
     "atlaskit-demo": "./atlaskit",
-    "quill-demo": "./quill"
-  },
-  "dependencies": {
+    "quill-demo": "./quill",
     "concurrently": "^4.1.2",
     "node-static": "^0.7.11",
     "rxjs-compat": "^6.5.4",
