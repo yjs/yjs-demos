@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dist": "webpack --mode=production",
-    "start": "npm run dist && serve",
+    "start": "webpack-dev-server --open-page prosemirror.html",
     "postinstall": "npm run dist"
   },
   "author": "Kevin Jahns <kevin.jahns@pm.me>",

@@ -23,6 +23,11 @@ module.exports = {
       test: /\.css$/,
       use: ['style-loader', 'css-loader']
     }]
+  },
+  devServer: {
+    contentBase: path.join(__dirname, '../'),
+    compress: true,
+    publicPath: '/monaco/dist/'
   }
 }
   
