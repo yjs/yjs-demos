@@ -9,24 +9,24 @@ import * as monaco from 'monaco-editor'
 window.MonacoEnvironment = {
   getWorkerUrl: function (moduleId, label) {
     if (label === 'json') {
-      return '/dist/json.worker.bundle.js'
+      return '/monaco/dist/json.worker.bundle.js'
     }
     if (label === 'css') {
-      return '/dist/css.worker.bundle.js'
+      return '/monaco/dist/css.worker.bundle.js'
     }
     if (label === 'html') {
-      return '/dist/html.worker.bundle.js'
+      return '/monaco/dist/html.worker.bundle.js'
     }
     if (label === 'typescript' || label === 'javascript') {
-      return '/dist/ts.worker.bundle.js'
+      return '/monaco/dist/ts.worker.bundle.js'
     }
-    return '/dist/editor.worker.bundle.js'
+    return '/monaco/dist/editor.worker.bundle.js'
   }
 }
 
 window.addEventListener('load', () => {
   const ydoc = new Y.Doc()
-  const provider = new WebsocketProvider(`${location.protocol === 'http:' ? 'ws:' : 'wss:'}${location.host}`, 'monaco', ydoc)
+  const provider = new WebsocketProvider(`wss://demos.yjs.dev`, 'monaco', ydoc)
   const type = ydoc.getText('monaco')
 
   const editor = monaco.editor.create(/** @type {HTMLElement} */ (document.getElementById('monaco-editor')), {

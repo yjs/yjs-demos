@@ -4,7 +4,7 @@ module.exports = {
   mode: 'development',
   devtool: 'source-map',
   entry: {
-    'monaco': './monaco/index.js',
+    'monaco': './monaco.js',
     // Package each language's worker and give these filenames in `getWorkerUrl`
     'editor.worker': 'monaco-editor/esm/vs/editor/editor.worker.js',
     'json.worker': 'monaco-editor/esm/vs/language/json/json.worker',
@@ -14,9 +14,9 @@ module.exports = {
   },
   output: {
     globalObject: 'self',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, './dist/'),
     filename: '[name].bundle.js',
-    publicPath: '/dist/'
+    publicPath: '/monaco/dist/'
   },
   module: {
     rules: [{
@@ -25,3 +25,4 @@ module.exports = {
     }]
   }
 }
+  

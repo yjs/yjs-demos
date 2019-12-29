@@ -1,0 +1,25 @@
+{
+  "name": "yjs-demos-monaco",
+  "version": "1.0.0",
+  "description": "Yjs Monaco editor binding demo",
+  "main": "index.js",
+  "scripts": {
+    "dist": "webpack --mode=production",
+    "start": "npm run dist && serve ..",
+    "postinstall": "npm run dist"
+  },
+  "author": "Kevin Jahns <kevin.jahns@pm.me>",
+  "license": "UNLICENSE",
+  "dependencies": {
+    "serve": "^11.2.0",
+    "y-prosemirror": "^0.1.5",
+    "y-websocket": "^1.0.7",
+    "yjs": "^13.0.0-103",
+    "y-monaco": "0.0.1",
+    "monaco-editor": "^0.17.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "css-loader": "^2.1.1",
+    "style-loader": "^0.23.1"
+  }
+}

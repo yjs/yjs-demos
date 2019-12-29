@@ -2,10 +2,8 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <title>Yjs Prosemirror Example</title>
-    <script type="text/javascript" src="../dist/prosemirror-versions-webrtc.js" async></script>
-    <link rel=stylesheet href="./prosemirror.css" async defer>
-    <link rel=stylesheet href="../lib/version.css" async defer>
+    <title>Yjs Atlaskit Example</title>
+    <script type="text/javascript" src="./dist/atlaskit.bundle.js" async></script>
     <style>
       placeholder {
         display: inline;
@@ -50,23 +48,50 @@
         padding-left: 2px;
         padding-right: 2px;
       }
-      #y-functions {
+      [ychange_state] {
+        position: relative;
+      }
+      [ychange_state]:hover::before {
+        content: attr(ychange_user);
+        background-color: #fa8100;
+        position: absolute;
+        top: -14px;
+        right: 0;
+        font-size: 12px;
+        padding: 0 2px;
+        border-radius: 3px 3px 0 0;
+        color: #fdfdfe;
+        user-select: none;
+        word-break: normal;
+      }
+      *[ychange_state='added'] {
+        background-color: #fa810069;
+      }
+      ychange[ychange_state='removed'] {
+        color: rgb(250, 129, 0);
+        text-decoration: line-through;
+      }
+      *:not(ychange)[ychange_state='removed'] {
+        background-color: #ff9494c9;
+        text-decoration: line-through;
+      }
+      img[ychange_state='removed'] {
+        padding: 2px;
+      }
+      #y-connect-btn {
         position: absolute;
         top: 20px;
         right: 20px;
       }
-      #y-functions > * {
-        display: inline-block;
-      }
     </style>
 </head>
 <body>
-  <div id="y-functions">
-    <div id="y-version"></div>
-    <button type="button" id="y-connect-btn">Disconnect</button>
-  </div>
+  <button type="button" id="y-connect-btn">Disconnect</button>
   <p></p>
-  <p>This is a demo of the <a href="https://github.com/yjs/yjs">Yjs</a> ⇔ <a href="http://prosemirror.net/">ProseMirror</a> binding: <a href="https://github.com/yjs/y-prosemirror">y-prosemirror</a>.</p>
-  <p>The content of this editor is shared with every client that visits this domain.</p>
+  <p>This is a demo of <a href="https://github.com/yjs/yjs">Yjs</a> ⇔ <a
+  href="https://atlaskit.atlassian.com/">Atlaskit Editor</a></p>
+  <p>The content of this editor is shared with every client that visits this
+  domain.</p>
+  <div id="editor"></div>
 </body>
 </html>
