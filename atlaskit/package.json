@@ -28,6 +28,8 @@
     "react-dom": "^16.8.6",
     "react-intl": "^2.9.0",
     "rxjs-compat": "^6.5.4",
-    "webpack-cli": "^3.3.4"
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
   }
 }
