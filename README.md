@@ -7,7 +7,7 @@
   Demo](https://demos.yjs.dev/prosemirror/prosemirror.html)
 * Shared Editing using the [ProseMirror](http://prosemirror.net/) editor with
   versioning support - [Live
-  Demo](https://demos.yjs.dev/prosemirror-versioning/prosemirror-versioning.html)
+  Demo](https://demos.yjs.dev/prosemirror-versions/prosemirror-versions.html)
 * Shared Editing using the [Quill](https://quilljs.com/) editor - [Live
   Demo](https://demos.yjs.dev/quill/quill.html)
 * Shared Editing using the
