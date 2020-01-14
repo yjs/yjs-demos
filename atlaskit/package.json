@@ -30,6 +30,9 @@
     "rxjs-compat": "^6.5.4",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.10.1"
+    "webpack-dev-server": "^3.10.1",
+    "y-prosemirror": "^0.2.0",
+    "y-websocket": "^1.1.1",
+    "yjs": "^13.0.0-105"
   }
 }

@@ -11,7 +11,7 @@ window.addEventListener('load', () => {
   const ydoc = new Y.Doc()
   const provider = new WebsocketProvider(
     `${location.protocol === 'http:' ? 'ws:' : 'wss:'}${location.host}`,
-    'codemirror',
+    'codemirror2',
     ydoc
   )
   const yText = ydoc.getText('codemirror')
