@@ -30,4 +30,3 @@ module.exports = {
     publicPath: '/monaco/dist/'
   }
 }
-  
