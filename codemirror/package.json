@@ -13,11 +13,11 @@
   "dependencies": {
     "codemirror": "^5.52.2",
     "serve": "^11.2.0",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3",
-    "y-codemirror": "^1.0.3",
-    "y-websocket": "^1.1.1",
-    "yjs": "^13.0.0-105"
+    "y-codemirror": "^1.0.6",
+    "y-websocket": "^1.2.4",
+    "yjs": "^13.0.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
   }
 }
