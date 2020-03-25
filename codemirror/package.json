@@ -11,13 +11,13 @@
   "author": "Kevin Jahns <kevin.jahns@pm.me>",
   "license": "UNLICENSE",
   "dependencies": {
-    "codemirror": "^5.50.0",
+    "codemirror": "^5.52.2",
     "serve": "^11.2.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
     "y-codemirror": "^1.0.3",
     "y-websocket": "^1.1.1",
-    "yjs": "^13.0.0-105",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.10.1"
+    "yjs": "^13.0.0-105"
   }
 }

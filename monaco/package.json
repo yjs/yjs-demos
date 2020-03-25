@@ -11,15 +11,15 @@
   "author": "Kevin Jahns <kevin.jahns@pm.me>",
   "license": "UNLICENSE",
   "dependencies": {
-    "serve": "^11.2.0",
-    "y-websocket": "^1.1.1",
-    "yjs": "^13.0.0-105",
-    "y-monaco": "0.0.1",
-    "monaco-editor": "^0.17.1",
     "css-loader": "^2.1.1",
+    "monaco-editor": "^0.17.1",
+    "serve": "^11.3.0",
     "style-loader": "^0.23.1",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.10.1"
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.1",
+    "y-monaco": "0.0.1",
+    "y-websocket": "^1.2.4",
+    "yjs": "^13.0.0"
   }
 }

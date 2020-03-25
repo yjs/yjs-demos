@@ -18,21 +18,21 @@
     ]
   },
   "dependencies": {
-    "@atlaskit/editor-core": "^112.13.6",
-    "@atlaskit/media-core": "^30.0.5",
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.6",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "@atlaskit/editor-core": "^112.44.8",
+    "@atlaskit/media-core": "^30.0.17",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-intl": "^2.9.0",
     "rxjs-compat": "^6.5.4",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.10.1",
-    "y-prosemirror": "^0.2.0",
-    "y-websocket": "^1.1.1",
-    "yjs": "^13.0.0-105"
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
+    "y-prosemirror": "^0.3.3",
+    "y-websocket": "^1.2.4",
+    "yjs": "^13.0.0"
   }
 }
