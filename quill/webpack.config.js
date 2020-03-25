@@ -4,7 +4,7 @@ module.exports = {
   mode: 'development',
   devtool: 'source-map',
   entry: {
-    'quill': './quill.js'
+    quill: './quill.js'
   },
   output: {
     globalObject: 'self',

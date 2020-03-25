@@ -5,7 +5,8 @@
   "scripts": {
     "start": "npm run serve",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "dist": "vue-cli-service build",
+    "postinstall": "npm run dist"
   },
   "dependencies": {
     "core-js": "^3.6.4",
@@ -15,14 +16,14 @@
     "tiptap": "^1.26.6",
     "tiptap-extensions": "^1.28.6",
     "vue": "^2.6.11",
-    "y-prosemirror": "^0.3.2",
-    "y-protocols": "^0.2.0",
+    "y-prosemirror": "^0.3.3",
+    "y-protocols": "^0.2.1",
     "y-websocket": "^1.2.4",
-    "yjs": "^13.0.2"
+    "yjs": "^13.0.4"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.1.2",
-    "@vue/cli-service": "^4.1.2",
+    "@vue/cli-plugin-babel": "^4.2.3",
+    "@vue/cli-service": "^4.2.3",
     "vue-template-compiler": "^2.6.11"
   },
   "browserslist": [

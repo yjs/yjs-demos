@@ -10,7 +10,7 @@ import 'codemirror/mode/javascript/javascript.js'
 window.addEventListener('load', () => {
   const ydoc = new Y.Doc()
   const provider = new WebsocketProvider(
-    `${location.protocol === 'http:' ? 'ws:' : 'wss:'}${location.host}`,
+    'wss://demos.yjs.dev',
     'codemirror2',
     ydoc
   )
