@@ -135,6 +135,10 @@
   </div>
 </template>
 
+<style lang="scss">
+  @import './main.scss';
+</style>
+
 <script>
 import { Editor, EditorContent, EditorMenuBar } from 'tiptap'
 import { Blockquote, Bold, BulletList, Code, CodeBlock, HardBreak, Heading, History, HorizontalRule, Italic, Link, ListItem, OrderedList, Strike, TodoItem, TodoList, Underline } from 'tiptap-extensions'
