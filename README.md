@@ -17,6 +17,8 @@
   editor - [Live Demo](https://demos.yjs.dev/monaco/monaco.html)
 * Shared Editing using the [CodeMirror](https://codemirror.net/)
   editor - [Live Demo](https://demos.yjs.dev/codemirror/codemirror.html)
+* Shared Editing using the [TipTap](https://tiptap.scrumpy.io/)
+  editor - [Live Demo](https://demos.yjs.dev/tiptap/dist/index.html)
 
 ## Get Started
 
