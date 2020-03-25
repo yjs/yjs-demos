@@ -142,6 +142,7 @@
 <script>
 import { Editor, EditorContent, EditorMenuBar } from 'tiptap'
 import { Blockquote, Bold, BulletList, Code, CodeBlock, HardBreak, Heading, History, HorizontalRule, Italic, Link, ListItem, OrderedList, Strike, TodoItem, TodoList, Underline } from 'tiptap-extensions'
+import RealtimeExtension from './Realtime'
 
 export default {
   components: {
@@ -168,7 +169,8 @@ export default {
           new Italic(),
           new Strike(),
           new Underline(),
-          new History()
+          new History(),
+          new RealtimeExtension(),
         ],
         content: `
           <h2>
