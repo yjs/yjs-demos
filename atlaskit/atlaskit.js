@@ -16,7 +16,7 @@ import {
 
 window.addEventListener('load', () => {
   const ydoc = new Y.Doc()
-  const provider = new WebsocketProvider(`wss://demos.yjs.dev`, 'atlaskit', ydoc)
+  const provider = new WebsocketProvider('wss://demos.yjs.dev', 'atlaskit', ydoc)
   const type = ydoc.get('prosemirror-atlaskit', Y.XmlFragment)
 
   const connectBtn = document.getElementById('y-connect-btn')

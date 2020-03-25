@@ -4,7 +4,7 @@ module.exports = {
   mode: 'development',
   devtool: 'source-map',
   entry: {
-    'codemirror': './codemirror.js'
+    codemirror: './codemirror.js'
   },
   output: {
     globalObject: 'self',

@@ -79,7 +79,7 @@ export default [{
     format: 'iife',
     sourcemap: true,
     globals: {
-      'crypto': 'null'
+      crypto: 'null'
     }
   },
   plugins
@@ -90,7 +90,7 @@ export default [{
     format: 'iife',
     sourcemap: true,
     globals: {
-      'crypto': 'null'
+      crypto: 'null'
     }
   },
   plugins
@@ -101,7 +101,7 @@ export default [{
     format: 'iife',
     sourcemap: true,
     globals: {
-      'crypto': 'null'
+      crypto: 'null'
     }
   },
   plugins

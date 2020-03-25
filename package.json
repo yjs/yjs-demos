@@ -25,6 +25,7 @@
     "node-static": "^0.7.11",
     "prosemirror-demo": "./prosemirror",
     "prosemirror-versions-demo": "./prosemirror-versions",
+    "tiptap-demo": "./tiptap",
     "quill-demo": "./quill",
     "rxjs-compat": "^6.5.4",
     "serve": "^11.2.0",

@@ -4,7 +4,7 @@ module.exports = {
   mode: 'development',
   devtool: 'source-map',
   entry: {
-    'atlaskit': './atlaskit.js'
+    atlaskit: './atlaskit.js'
   },
   output: {
     path: path.resolve(__dirname, './dist'),

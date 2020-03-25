@@ -101,14 +101,16 @@ export const nodes = {
     },
     group: 'inline',
     draggable: true,
-    parseDOM: [{ tag: 'img[src]',
+    parseDOM: [{
+      tag: 'img[src]',
       getAttrs (dom) {
         return {
           src: dom.getAttribute('src'),
           title: dom.getAttribute('title'),
           alt: dom.getAttribute('alt')
         }
-      } }],
+      }
+    }],
     toDOM (node) {
       const domAttrs = {
         src: node.attrs.src,
@@ -142,10 +144,12 @@ export const marks = {
       title: { default: null }
     },
     inclusive: false,
-    parseDOM: [{ tag: 'a[href]',
+    parseDOM: [{
+      tag: 'a[href]',
       getAttrs (dom) {
         return { href: dom.getAttribute('href'), title: dom.getAttribute('title') }
-      } }],
+      }
+    }],
     toDOM (node) { return ['a', node.attrs, 0] }
   },
 
