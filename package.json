@@ -29,9 +29,9 @@
     "standard": "^12.0.1",
     "tiptap-demo": "./tiptap",
     "ws": "^7.2.3",
-    "y-protocols": "^0.2.2",
-    "y-websocket": "^1.2.4",
-    "yjs": "^13.0.4"
+    "y-protocols": "^0.2.3",
+    "y-websocket": "^1.2.5",
+    "yjs": "^13.0.5"
   },
   "engines": {
     "node": "^12.0.0"

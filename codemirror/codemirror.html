@@ -7,16 +7,18 @@
     <link rel=stylesheet href="https://codemirror.net/lib/codemirror.css"  async defer>
     <style>
       .remote-caret {
-        position: absolute;
-        border-left: black;
-        border-left-style: solid;
-        border-left-width: 2px;
-        height: 1em;
+        position: relative;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        margin-left: -1px;
+        margin-right: -1px;
+        box-sizing: border-box;
       }
       .remote-caret > div {
-        position: relative;
+        position: absolute;
         top: -1.05em;
-        font-size: 13px;
+        left: -1px;
+        font-size: .6em;
         background-color: rgb(250, 129, 0);
         font-family: serif;
         font-style: normal;
@@ -27,6 +29,15 @@
         padding-left: 2px;
         padding-right: 2px;
         z-index: 3;
+        transition: opacity .3s ease-in-out;
+      }
+      .remote-caret.hide-name > div {
+        transition-delay: .7s;
+        opacity: 0;
+      }
+      .remote-caret:hover > div {
+        opacity: 1;
+        transition-delay: 0s;
       }
       </style>
   </head>

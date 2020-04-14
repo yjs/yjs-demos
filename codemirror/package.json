@@ -13,7 +13,7 @@
   "dependencies": {
     "codemirror": "^5.52.2",
     "serve": "^11.2.0",
-    "y-codemirror": "^1.0.6",
+    "y-codemirror": "^2.0.0",
     "y-websocket": "^1.2.4",
     "yjs": "^13.0.0",
     "webpack": "^4.41.2",

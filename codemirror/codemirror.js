@@ -4,7 +4,7 @@
 import CodeMirror from 'codemirror'
 import * as Y from 'yjs'
 import { WebsocketProvider } from 'y-websocket'
-import { CodeMirrorBinding } from 'y-codemirror'
+import { CodemirrorBinding } from 'y-codemirror'
 import 'codemirror/mode/javascript/javascript.js'
 
 window.addEventListener('load', () => {
@@ -24,7 +24,7 @@ window.addEventListener('load', () => {
     lineNumbers: true
   })
 
-  const binding = new CodeMirrorBinding(yText, editor, provider.awareness)
+  const binding = new CodemirrorBinding(yText, editor, provider.awareness)
 
   const connectBtn = /** @type {HTMLElement} */ (document.getElementById('y-connect-btn'))
   connectBtn.addEventListener('click', () => {
