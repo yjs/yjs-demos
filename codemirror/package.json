@@ -1,7 +1,7 @@
 {
-  "name": "yjs-demos-prosemirror",
+  "name": "yjs-demos-codemirror",
   "version": "1.0.0",
-  "description": "Yjs ProseMirror editor binding demo",
+  "description": "Yjs CodeMirror editor binding demo",
   "main": "index.js",
   "scripts": {
     "dist": "webpack --mode=production",
