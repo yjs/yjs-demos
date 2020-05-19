@@ -55,5 +55,5 @@ window.addEventListener('load', () => {
   })
 
   // @ts-ignore
-  window.example = { provider, ydoc, type, binding }
+  window.example = { provider, ydoc, type, binding, Y }
 })
