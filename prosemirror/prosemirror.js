@@ -9,21 +9,20 @@ import { schema } from './schema.js'
 import { exampleSetup } from 'prosemirror-example-setup'
 import { keymap } from 'prosemirror-keymap'
 
-window.addEventListener('load', () => {
-  const ydoc = new Y.Doc()
-  const provider = new WebsocketProvider('wss://demos.yjs.dev', 'prosemirror', ydoc)
-  const type = ydoc.getXmlFragment('prosemirror')
+function createProseMirrorView (provider, name) {
+  const type = provider.doc.getXmlFragment(name)
 
   const editor = document.createElement('div')
-  editor.setAttribute('id', 'editor')
+  editor.setAttribute('id', 'editor_' + name)
   const editorContainer = document.createElement('div')
   editorContainer.insertBefore(editor, null)
+
   const prosemirrorView = new EditorView(editor, {
     state: EditorState.create({
       schema,
       plugins: [
         ySyncPlugin(type),
-        yCursorPlugin(provider.awareness),
+        yCursorPlugin(provider.awareness, { cursorId: name }),
         yUndoPlugin(),
         keymap({
           'Mod-z': undo,
@@ -33,7 +32,16 @@ window.addEventListener('load', () => {
       ].concat(exampleSetup({ schema }))
     })
   })
+
   document.body.insertBefore(editorContainer, null)
+
+  // @ts-ignore
+  window[name] = { type, prosemirrorView }
+}
+
+window.addEventListener('load', () => {
+  const ydoc = new Y.Doc()
+  const provider = new WebsocketProvider('wss://demos.yjs.dev', 'prosemirror', ydoc)
 
   const connectBtn = /** @type {HTMLElement} */ (document.getElementById('y-connect-btn'))
   connectBtn.addEventListener('click', () => {
@@ -46,6 +54,8 @@ window.addEventListener('load', () => {
     }
   })
 
-  // @ts-ignore
-  window.example = { provider, ydoc, type, prosemirrorView }
+  createProseMirrorView(provider, 'prosemirror')
+  createProseMirrorView(provider, 'second_prosemirror')
+
+  window.example = { provider, ydoc }
 })
