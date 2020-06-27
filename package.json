@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "description": "A collection of Yjs demos",
+  "funding": {
+    "type": "GitHub Sponsors ❤",
+    "url": "https://github.com/sponsors/dmonad"
+  },
   "scripts": {
     "clean": "rm -rf */dist */node_modules node_modules; npm i",
     "start": "export PRODUCTION=1; node ./demo-server.js",
