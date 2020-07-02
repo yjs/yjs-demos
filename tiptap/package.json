@@ -16,6 +16,7 @@
     "tiptap": "^1.26.6",
     "tiptap-extensions": "^1.28.6",
     "vue": "^2.6.11",
+    "y-indexeddb": "^9.0.3",
     "y-prosemirror": "^0.3.3",
     "y-websocket": "^1.2.4",
     "yjs": "^13.0.4"

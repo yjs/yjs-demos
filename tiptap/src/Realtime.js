@@ -2,10 +2,12 @@ import { keymap } from 'prosemirror-keymap'
 import { Extension } from 'tiptap'
 import { redo, undo, yCursorPlugin, ySyncPlugin, yUndoPlugin } from 'y-prosemirror'
 import { WebsocketProvider } from 'y-websocket'
+import { IndexeddbPersistence } from 'y-indexeddb'                             // Remove this in case you don't want offline persistence
 import * as Y from 'yjs'
 
 const ydoc = new Y.Doc()
 const provider = new WebsocketProvider('wss://demos.yjs.dev', 'tiptap', ydoc)
+const indexeddbProvider = new IndexeddbPersistence('tiptap', ydoc)              // Remove this in case you don't want offline persistence
 const type = ydoc.getXmlFragment('prosemirror')
 
 export default class RealtimeExtension extends Extension {
