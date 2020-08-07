@@ -27,7 +27,6 @@
     "demo-bundles": "./demo-bundles",
     "monaco-demo": "./monaco",
     "node-static": "^0.7.11",
-    "prosemirror-dat-demo": "./prosemirror-dat",
     "prosemirror-demo": "./prosemirror",
     "prosemirror-versions-demo": "./prosemirror-versions",
     "quill-demo": "./quill",
