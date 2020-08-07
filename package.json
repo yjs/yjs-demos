@@ -12,7 +12,8 @@
     "start": "npm run dist && export PRODUCTION=1; node ./demo-server.js",
     "dist:pm-dat": "cd prosemirror-dat && npm i",
     "dist:cm": "cd codemirror && npm i",
-    "dist": "npm run dist:pm-dat && npm run dist:cm",
+    "dist:monaco": "cd monaco && npm i",
+    "dist": "npm run dist:pm-dat && npm run dist:cm && npm run dist:monaco",
     "now-start": "PRODUCTION=1 node ./demo-server.js",
     "lint": "standard"
   },
@@ -27,7 +28,6 @@
   "dependencies": {
     "atlaskit-demo": "./atlaskit",
     "demo-bundles": "./demo-bundles",
-    "monaco-demo": "./monaco",
     "node-static": "^0.7.11",
     "prosemirror-demo": "./prosemirror",
     "prosemirror-versions-demo": "./prosemirror-versions",
