@@ -31,8 +31,8 @@
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3",
-    "y-prosemirror": "^0.3.3",
+    "y-prosemirror": "^0.3.6",
     "y-websocket": "^1.2.4",
-    "yjs": "^13.0.0"
+    "yjs": "^13.3.2"
   }
 }

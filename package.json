@@ -35,12 +35,12 @@
     "standard": "^12.0.1",
     "tiptap-demo": "./tiptap",
     "ws": "^7.3.0",
-    "y-protocols": "^0.2.3",
+    "y-protocols": "^1.0.1",
     "y-websocket": "^1.2.5",
-    "yjs": "^13.0.8"
+    "yjs": "^13.3.2"
   },
   "engines": {
-    "node": "^12.0.0"
+    "node": "^14.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
