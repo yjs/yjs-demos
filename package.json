@@ -24,26 +24,26 @@
   "dependencies": {
     "atlaskit-demo": "./atlaskit",
     "codemirror-demo": "./codemirror",
+    "demo-bundles": "./demo-bundles",
     "monaco-demo": "./monaco",
     "node-static": "^0.7.11",
     "prosemirror-dat-demo": "./prosemirror-dat",
     "prosemirror-demo": "./prosemirror",
     "prosemirror-versions-demo": "./prosemirror-versions",
     "quill-demo": "./quill",
-    "demo-bundles": "./demo-bundles",
     "serve": "^11.3.1",
     "standard": "^12.0.1",
     "tiptap-demo": "./tiptap",
-    "ws": "^7.3.0",
+    "ws": "^7.3.1",
     "y-protocols": "^1.0.1",
-    "y-websocket": "^1.2.5",
+    "y-websocket": "^1.3.1",
     "yjs": "^13.3.2"
   },
   "engines": {
     "node": "^12.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.6",
+    "@babel/core": "^7.11.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }
