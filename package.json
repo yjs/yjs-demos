@@ -10,7 +10,9 @@
   "scripts": {
     "clean": "rm -rf */dist */node_modules node_modules; npm i",
     "start": "npm run dist && export PRODUCTION=1; node ./demo-server.js",
-    "dist": "cd prosemirror-dat && npm i",
+    "dist:pm-dat": "cd prosemirror-dat && npm i",
+    "dist:cm": "cd codemirror && npm i",
+    "dist": "npm run dist:pm-dat && npm run dist:cm",
     "now-start": "PRODUCTION=1 node ./demo-server.js",
     "lint": "standard"
   },
@@ -24,7 +26,6 @@
   },
   "dependencies": {
     "atlaskit-demo": "./atlaskit",
-    "codemirror-demo": "./codemirror",
     "demo-bundles": "./demo-bundles",
     "monaco-demo": "./monaco",
     "node-static": "^0.7.11",
