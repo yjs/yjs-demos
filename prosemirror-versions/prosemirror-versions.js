@@ -70,9 +70,27 @@ const unrenderVersion = editorview => {
 /**
  * @param {EditorView} editorview
  * @param {Version} version
+ */
+const restoreVersion = (editorview, version) => {
+  const snapshot = Y.decodeSnapshot(version.snapshot)
+  editorview.dispatch(editorview.state.tr.setMeta(ySyncPluginKey, { snapshot: snapshot, prevSnapshot: snapshot }))
+  // Wait one tick to let the snapshot render
+  setTimeout(() => {
+    // Grab the new editor state (after the snapshot has rendered)
+    const newPMState = editorview.state
+    // Unrender the snapshot
+    editorview.dispatch(editorview.state.tr.setMeta(ySyncPluginKey, { snapshot: null, prevSnapshot: null }))
+    // Overwrite the editor state with the one we grabbed previously. This update will propagate to all other clients
+    editorview.updateState(newPMState)
+  }, 0)
+}
+
+/**
+ * @param {EditorView} editorview
+ * @param {Version} version
  * @param {Version|null} prevSnapshot
  */
-const versionTemplate = (editorview, version, prevSnapshot) => html`<div class="version-list" @click=${e => renderVersion(editorview, version, prevSnapshot)}>${new Date(version.date).toLocaleString()}</div>`
+const versionTemplate = (editorview, version, prevSnapshot) => html`<div><div class="version-list" style="display:inline-block;" @click=${e => renderVersion(editorview, version, prevSnapshot)}>${new Date(version.date).toLocaleString()}</div><button style="display:inline-block;" @click=${(e) => restoreVersion(editorview, version)}>Restore</button></div>`
 
 const versionList = (editorview, doc) => {
   const versions = doc.getArray('versions')
