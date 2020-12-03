@@ -1,5 +1,5 @@
 tasks:
-  - init: cd demo-server && npm i && npm run dist-all
+  - init: npm i
     command: cd demo-server && npm run start
 ports:
   - port: 8080
