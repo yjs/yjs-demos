@@ -1,14 +1,12 @@
 {
-  "name": "yjs-demos-quill",
+  "name": "yjs-quill-demo",
   "version": "1.0.0",
-  "description": "Yjs Quill binding demo",
-  "main": "index.js",
+  "description": "Yjs ❤ Quill",
   "author": "Kevin Jahns <kevin.jahns@pm.me>",
   "license": "UNLICENSE",
   "scripts": {
     "dist": "webpack --mode=production",
-    "start": "webpack-dev-server --open-page quill.html",
-    "postinstall": "npm run dist"
+    "start": "webpack-dev-server --open-page quill.html"
   },
   "dependencies": {
     "quill": "^1.3.7",

@@ -1,13 +1,11 @@
 {
-  "name": "prosemirror-atlaskit-demo",
+  "name": "yjs-atlaskit-demo",
   "private": true,
   "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Yjs ❤ Atlaskit",
   "scripts": {
     "dist": "webpack --mode=production",
-    "start": "webpack-dev-server --open-page atlaskit.html",
-    "postinstall": "npm run dist"
+    "start": "webpack-dev-server --open-page atlaskit.html"
   },
   "author": "Kevin Jahns <kevin.jahns@pm.me>",
   "license": "UNLICENSE",

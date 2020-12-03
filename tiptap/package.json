@@ -1,12 +1,11 @@
 {
-  "name": "tiptap-realtime",
+  "name": "yjs-tiptap-demo",
   "version": "0.1.0",
+  "description": "Yjs ❤ TipTap",
   "private": true,
   "scripts": {
-    "start": "npm run serve",
-    "serve": "vue-cli-service serve",
-    "dist": "vue-cli-service build",
-    "postinstall": "npm run dist"
+    "start": "vue-cli-service serve",
+    "dist": "vue-cli-service build"
   },
   "dependencies": {
     "core-js": "^3.6.5",

@@ -1,12 +1,10 @@
 {
-  "name": "yjs-demos-codemirror",
+  "name": "yjs-codemirror-demo",
   "version": "1.0.0",
-  "description": "Yjs CodeMirror editor binding demo",
-  "main": "index.js",
+  "description": "Yjs ❤ Atlaskit",
   "scripts": {
     "dist": "webpack --mode=production",
-    "start": "webpack-dev-server --open-page codemirror.html",
-    "postinstall": "npm run dist"
+    "start": "webpack-dev-server --open-page codemirror.html"
   },
   "author": "Kevin Jahns <kevin.jahns@pm.me>",
   "license": "UNLICENSE",

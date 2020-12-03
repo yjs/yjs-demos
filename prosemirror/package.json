@@ -1,12 +1,10 @@
 {
-  "name": "yjs-demos-prosemirror",
+  "name": "yjs-prosemirror-demo",
   "version": "1.0.0",
-  "description": "Yjs ProseMirror editor binding demo",
-  "main": "index.js",
+  "description": "Yjs ❤ ProseMirror",
   "scripts": {
     "dist": "webpack --mode=production",
-    "start": "webpack-dev-server --open-page prosemirror.html",
-    "postinstall": "npm run dist"
+    "start": "webpack-dev-server --open-page prosemirror.html"
   },
   "author": "Kevin Jahns <kevin.jahns@pm.me>",
   "license": "UNLICENSE",

@@ -1,0 +1,50 @@
+{
+  "name": "yjs-demos-server",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Demo server that serves the static assets and provides a shared websocket backend.",
+  "funding": {
+    "type": "GitHub Sponsors ❤",
+    "url": "https://github.com/sponsors/dmonad"
+  },
+  "scripts": {
+    "clean": "rm -rf ../*/dist ../*/node_modules",
+    "start": "export PRODUCTION=1; node ./demo-server.js",
+    "dist:pm-dat": "cd ../prosemirror-dat && npm i && npm run dist",
+    "dist:cm": "cd ../codemirror && npm i && npm run dist",
+    "dist:atlaskit": "cd ../atlaskit && npm i && npm run dist",
+    "dist:pm": "cd ../prosemirror && npm i && npm run dist",
+    "dist:pm-versions": "cd ../prosemirror-versions && npm i && npm run dist",
+    "dist:quill": "cd ../quill && npm i && npm run dist",
+    "dist:monaco": "cd ../monaco && npm i && npm run dist",
+    "dist:tiptap": "cd ../tiptap && npm i && npm run dist",
+    "dist-all": "npm run dist:pm-dat && npm run dist:cm && npm run dist:atlaskit && npm run dist:pm && npm run dist:pm-versions && npm run dist:quill && npm run dist:monaco && npm run dist:tiptap",
+    "now-start": "PRODUCTION=1 node ./demo-server.js",
+    "lint": "standard"
+  },
+  "author": "Kevin Jahns <kevin.jahns@protonmail.com",
+  "license": "MIT",
+  "standard": {
+    "ignore": [
+      "/dist",
+      "/node_modules"
+    ]
+  },
+  "dependencies": {
+    "node-static": "^0.7.11",
+    "serve": "^11.3.1",
+    "standard": "^12.0.1",
+    "ws": "^7.3.1",
+    "y-protocols": "^1.0.1",
+    "y-websocket": "^1.3.1",
+    "yjs": "^13.3.2"
+  },
+  "engines": {
+    "node": "^12.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}

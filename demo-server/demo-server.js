@@ -10,7 +10,7 @@ const setupWSConnection = require('y-websocket/bin/utils.js').setupWSConnection
 const production = process.env.PRODUCTION != null
 const port = process.env.PORT || 8080
 
-const staticServer = new StaticServer('.', { cache: production ? 3600 : false, gzip: production })
+const staticServer = new StaticServer('../', { cache: production ? 3600 : false, gzip: production })
 
 const server = http.createServer((request, response) => {
   request.addListener('end', () => {

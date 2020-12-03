@@ -1,8 +1,7 @@
-# TipTap Demo
-> [y-prosemirror](https://docs.yjs.dev/ecosystem/editor-bindings/prosemirror) / [y-websocket](https://docs.yjs.dev/ecosystem/connection-provider/y-websocket) / [Live Demo](https://demos.yjs.dev/tiptap/tiptap.html)
+# Quill Demo
+> [y-quill](https://docs.yjs.dev/ecosystem/editor-bindings/quill) / [y-websocket](https://docs.yjs.dev/ecosystem/connection-provider/y-websocket) / [Live Demo](https://demos.yjs.dev/quill/quill.html)
 
-This is a demo of an [TipTap](https://tiptap.dev/) editor that was made collaborative with Yjs & y-prosemirror. Since TipTap is based on ProseMirror, we simply need to add y-prosemirror to the internal ProseMirror instance. Find out more about the prosemirror binding in our [Official Docs](https://docs.yjs.dev/ecosystem/editor-bindings/prosemirror).
-
+This is a demo of a [Quill](https://quilljs.com/) editor that was made collaborative with Yjs & y-quill. Learn more about how you can customize Quill in [their documentation](https://quilljs.com/).
 
 We use the [y-websocket](https://docs.yjs.dev/ecosystem/connection-provider) provider to share document updates through a server. There are many more providers available for Yjs - try switching to another provider. [See docs](https://docs.yjs.dev/ecosystem/connection-provider).
 
