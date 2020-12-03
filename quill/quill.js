@@ -10,7 +10,7 @@ Quill.register('modules/cursors', QuillCursors)
 
 window.addEventListener('load', () => {
   const ydoc = new Y.Doc()
-  const provider = new WebsocketProvider('wss://demos.yjs.dev', 'quill', ydoc)
+  const provider = new WebsocketProvider('wss://demos.yjs.dev', 'quill-demo', ydoc)
   const type = ydoc.getText('quill')
   const editorContainer = document.createElement('div')
   editorContainer.setAttribute('id', 'editor')

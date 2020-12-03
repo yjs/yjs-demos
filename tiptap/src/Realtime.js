@@ -5,7 +5,7 @@ import { WebsocketProvider } from 'y-websocket'
 import * as Y from 'yjs'
 
 const ydoc = new Y.Doc()
-const provider = new WebsocketProvider('wss://demos.yjs.dev', 'tiptap', ydoc)
+const provider = new WebsocketProvider('wss://demos.yjs.dev', 'tiptap-demo', ydoc)
 const type = ydoc.getXmlFragment('prosemirror')
 
 export default class RealtimeExtension extends Extension {
