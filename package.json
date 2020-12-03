@@ -1,0 +1,36 @@
+{
+  "name": "yjs-demos",
+  "version": "0.0.0",
+  "private": true,
+  "description": "You can ignore this package.json. We only need it for deploying the demos to our CDN.",
+  "funding": {
+    "type": "GitHub Sponsors ❤",
+    "url": "https://github.com/sponsors/dmonad"
+  },
+  "scripts": {
+    "clean": "rm -rf */dist ../*/node_modules",
+    "start": "cd demo-server && npm start",
+    "dist:pm-dat": "cd prosemirror-dat && npm i && npm run dist",
+    "dist:cm": "cd codemirror && npm i && npm run dist",
+    "dist:atlaskit": "cd atlaskit && npm i && npm run dist",
+    "dist:pm": "cd prosemirror && npm i && npm run dist",
+    "dist:pm-versions": "cd ../prosemirror-versions && npm i && npm run dist",
+    "dist:quill": "cd quill && npm i && npm run dist",
+    "dist:monaco": "cd monaco && npm i && npm run dist",
+    "dist:tiptap": "cd tiptap && npm i && npm run dist",
+    "dist-all": "npm run dist:pm-dat && npm run dist:cm && npm run dist:atlaskit && npm run dist:pm && npm run dist:pm-versions && npm run dist:quill && npm run dist:monaco && npm run dist:tiptap",
+    "lint": "standard",
+    "postinstall": "npm run dist-all"
+  },
+  "author": "Kevin Jahns <kevin.jahns@protonmail.com",
+  "license": "UNLICENSE",
+  "standard": {
+    "ignore": [
+      "/dist",
+      "/node_modules"
+    ]
+  },
+  "engines": {
+    "node": "^14.0.0"
+  }
+}
