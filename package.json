@@ -10,6 +10,7 @@
   "scripts": {
     "clean": "rm -rf */dist ../*/node_modules",
     "start": "cd demo-server && npm start",
+    "dist:demo-server": "cd demo-server && npm i",
     "dist:pm-dat": "cd prosemirror-dat && npm update && npm run dist",
     "dist:cm": "cd codemirror && npm i && npm run dist",
     "dist:atlaskit": "cd atlaskit && npm i && npm run dist",
@@ -18,7 +19,7 @@
     "dist:quill": "cd quill && npm i && npm run dist",
     "dist:monaco": "cd monaco && npm i && npm run dist",
     "dist:tiptap": "cd tiptap && npm i && npm run dist",
-    "dist-all": "npm run dist:pm-dat && npm run dist:cm && npm run dist:atlaskit && npm run dist:pm && npm run dist:pm-versions && npm run dist:quill && npm run dist:monaco && npm run dist:tiptap",
+    "dist-all": "npm run dist:demo-server && npm run dist:pm-dat && npm run dist:cm && npm run dist:atlaskit && npm run dist:pm && npm run dist:pm-versions && npm run dist:quill && npm run dist:monaco && npm run dist:tiptap",
     "lint": "standard",
     "postinstall": "npm run dist-all"
   },
