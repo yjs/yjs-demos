@@ -14,14 +14,14 @@
     "monaco-editor": "^0.20.0",
     "serve": "^11.3.2",
     "style-loader": "^0.23.1",
-    "webpack": "^4.44.1",
+    "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
     "y-monaco": "0.1.0",
-    "y-websocket": "^1.3.1",
-    "yjs": "^13.3.1"
+    "y-websocket": "^1.3.8",
+    "yjs": "^13.4.6"
   },
   "devDependencies": {
-    "file-loader": "^6.0.0"
+    "file-loader": "^6.2.0"
   }
 }
