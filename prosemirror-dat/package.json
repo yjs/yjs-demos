@@ -17,8 +17,8 @@
     "webpack": "^4.45.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.1",
-    "y-dat": "0.0.1",
     "y-prosemirror": "^0.3.6",
-    "yjs": "^13.4.12"
+    "yjs": "^13.4.12",
+    "y-dat": "0.0.1"
   }
 }

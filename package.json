@@ -8,11 +8,11 @@
     "url": "https://github.com/sponsors/dmonad"
   },
   "scripts": {
-    "clean": "rm -rf */dist ../*/node_modules",
+    "clean": "rm -rf */dist */node_modules",
     "test": "standard",
     "start": "cd demo-server && npm start",
     "dist:demo-server": "cd demo-server && npm ci",
-    "dist:pm-dat": "cd prosemirror-dat && npm ci && npm run dist",
+    "dist:pm-dat": "cd prosemirror-dat && npm i && npm run dist",
     "dist:cm": "cd codemirror && npm ci && npm run dist",
     "dist:atlaskit": "cd atlaskit && npm ci && npm run dist",
     "dist:pm": "cd prosemirror && npm ci && npm run dist",
