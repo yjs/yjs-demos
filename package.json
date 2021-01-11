@@ -9,16 +9,17 @@
   },
   "scripts": {
     "clean": "rm -rf */dist ../*/node_modules",
+    "test": "standard",
     "start": "cd demo-server && npm start",
-    "dist:demo-server": "cd demo-server && npm i",
-    "dist:pm-dat": "cd prosemirror-dat && npm update && npm run dist",
-    "dist:cm": "cd codemirror && npm i && npm run dist",
-    "dist:atlaskit": "cd atlaskit && npm i && npm run dist",
-    "dist:pm": "cd prosemirror && npm i && npm run dist",
-    "dist:pm-versions": "cd prosemirror-versions && npm i && npm run dist",
-    "dist:quill": "cd quill && npm i && npm run dist",
-    "dist:monaco": "cd monaco && npm i && npm run dist",
-    "dist:tiptap": "cd tiptap && npm i && npm run dist",
+    "dist:demo-server": "cd demo-server && npm ci",
+    "dist:pm-dat": "cd prosemirror-dat && npm ci && npm run dist",
+    "dist:cm": "cd codemirror && npm ci && npm run dist",
+    "dist:atlaskit": "cd atlaskit && npm ci && npm run dist",
+    "dist:pm": "cd prosemirror && npm ci && npm run dist",
+    "dist:pm-versions": "cd prosemirror-versions && npm ci && npm run dist",
+    "dist:quill": "cd quill && npm ci && npm run dist",
+    "dist:monaco": "cd monaco && npm ci && npm run dist",
+    "dist:tiptap": "cd tiptap && npm ci && npm run dist",
     "dist-all": "npm run dist:demo-server && npm run dist:pm-dat && npm run dist:cm && npm run dist:atlaskit && npm run dist:pm && npm run dist:pm-versions && npm run dist:quill && npm run dist:monaco && npm run dist:tiptap",
     "lint": "standard",
     "postinstall": "npm run dist-all"
@@ -33,5 +34,8 @@
   },
   "engines": {
     "node": "^14.0.0"
+  },
+  "devDependencies": {
+    "standard": "^16.0.3"
   }
 }

@@ -11,7 +11,7 @@ window.addEventListener('load', () => {
   const ydoc = new Y.Doc()
   const provider = new WebsocketProvider(
     'wss://demos.yjs.dev',
-   'codemirror-demo',
+    'codemirror-demo',
     ydoc
   )
   const yText = ydoc.getText('codemirror')

@@ -16,7 +16,7 @@ window.addEventListener('load', () => {
   editorContainer.setAttribute('id', 'editor')
   document.body.insertBefore(editorContainer, null)
 
-  var editor = new Quill(editorContainer, {
+  const editor = new Quill(editorContainer, {
     modules: {
       cursors: true,
       toolbar: [
