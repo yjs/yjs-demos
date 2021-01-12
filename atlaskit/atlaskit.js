@@ -17,7 +17,7 @@ import {
 window.addEventListener('load', () => {
   const ydoc = new Y.Doc()
   const provider = new WebsocketProvider('wss://demos.yjs.dev', 'atlaskit-demo', ydoc)
-  const type = ydoc.get('prosemirror-atlaskit', Y.XmlFragment)
+  const yXmlFragment = ydoc.get('prosemirror-atlaskit', Y.XmlFragment)
 
   const connectBtn = document.getElementById('y-connect-btn')
   connectBtn.addEventListener('click', () => {
@@ -45,7 +45,7 @@ window.addEventListener('load', () => {
           {
             name: 'y-shared-content',
             plugin: function (_a) {
-              return ySyncPlugin(type)
+              return ySyncPlugin(yXmlFragment)
             }
           }, {
             name: 'y-shared-cursors',
@@ -116,5 +116,5 @@ window.addEventListener('load', () => {
     document.getElementById('editor')
   )
 
-  window.example = { provider, ydoc, type }
+  window.example = { provider, ydoc, yXmlFragment }
 })

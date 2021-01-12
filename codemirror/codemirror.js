@@ -14,7 +14,7 @@ window.addEventListener('load', () => {
     'codemirror-demo',
     ydoc
   )
-  const yText = ydoc.getText('codemirror')
+  const ytext = ydoc.getText('codemirror')
   const editorContainer = document.createElement('div')
   editorContainer.setAttribute('id', 'editor')
   document.body.insertBefore(editorContainer, null)
@@ -24,7 +24,7 @@ window.addEventListener('load', () => {
     lineNumbers: true
   })
 
-  const binding = new CodemirrorBinding(yText, editor, provider.awareness)
+  const binding = new CodemirrorBinding(ytext, editor, provider.awareness)
 
   const connectBtn = /** @type {HTMLElement} */ (document.getElementById('y-connect-btn'))
   connectBtn.addEventListener('click', () => {
@@ -38,5 +38,5 @@ window.addEventListener('load', () => {
   })
 
   // @ts-ignore
-  window.example = { provider, ydoc, yText, binding, Y }
+  window.example = { provider, ydoc, ytext, binding, Y }
 })
