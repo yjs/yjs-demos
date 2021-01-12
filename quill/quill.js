@@ -11,12 +11,12 @@ Quill.register('modules/cursors', QuillCursors)
 window.addEventListener('load', () => {
   const ydoc = new Y.Doc()
   const provider = new WebsocketProvider('wss://demos.yjs.dev', 'quill-demo', ydoc)
-  const type = ydoc.getText('quill')
+  const ytext = ydoc.getText('quill')
   const editorContainer = document.createElement('div')
   editorContainer.setAttribute('id', 'editor')
   document.body.insertBefore(editorContainer, null)
 
-  var editor = new Quill(editorContainer, {
+  const editor = new Quill(editorContainer, {
     modules: {
       cursors: true,
       toolbar: [
@@ -32,7 +32,7 @@ window.addEventListener('load', () => {
     theme: 'snow' // or 'bubble'
   })
 
-  const binding = new QuillBinding(type, editor, provider.awareness)
+  const binding = new QuillBinding(ytext, editor, provider.awareness)
 
   /*
   // Define user name and user name
@@ -55,5 +55,5 @@ window.addEventListener('load', () => {
   })
 
   // @ts-ignore
-  window.example = { provider, ydoc, type, binding, Y }
+  window.example = { provider, ydoc, ytext, binding, Y }
 })

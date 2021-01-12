@@ -12,7 +12,7 @@ import { keymap } from 'prosemirror-keymap'
 window.addEventListener('load', () => {
   const ydoc = new Y.Doc()
   const provider = new WebsocketProvider('wss://demos.yjs.dev', 'prosemirror-demo', ydoc)
-  const type = ydoc.getXmlFragment('prosemirror')
+  const yXmlFragment = ydoc.getXmlFragment('prosemirror')
 
   const editor = document.createElement('div')
   editor.setAttribute('id', 'editor')
@@ -22,7 +22,7 @@ window.addEventListener('load', () => {
     state: EditorState.create({
       schema,
       plugins: [
-        ySyncPlugin(type),
+        ySyncPlugin(yXmlFragment),
         yCursorPlugin(provider.awareness),
         yUndoPlugin(),
         keymap({
@@ -47,5 +47,5 @@ window.addEventListener('load', () => {
   })
 
   // @ts-ignore
-  window.example = { provider, ydoc, type, prosemirrorView }
+  window.example = { provider, ydoc, yXmlFragment, prosemirrorView }
 })

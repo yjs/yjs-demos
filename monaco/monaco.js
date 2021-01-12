@@ -27,14 +27,14 @@ window.MonacoEnvironment = {
 window.addEventListener('load', () => {
   const ydoc = new Y.Doc()
   const provider = new WebsocketProvider('wss://demos.yjs.dev', 'monaco-demo', ydoc)
-  const type = ydoc.getText('monaco')
+  const ytext = ydoc.getText('monaco')
 
   const editor = monaco.editor.create(/** @type {HTMLElement} */ (document.getElementById('monaco-editor')), {
     value: '',
     language: 'javascript',
     theme: 'vs-dark'
   })
-  const monacoBinding = new MonacoBinding(type, /** @type {monaco.editor.ITextModel} */ (editor.getModel()), new Set([editor]), provider.awareness)
+  const monacoBinding = new MonacoBinding(ytext, /** @type {monaco.editor.ITextModel} */ (editor.getModel()), new Set([editor]), provider.awareness)
 
   const connectBtn = /** @type {HTMLElement} */ (document.getElementById('y-connect-btn'))
   connectBtn.addEventListener('click', () => {
@@ -48,5 +48,5 @@ window.addEventListener('load', () => {
   })
 
   // @ts-ignore
-  window.example = { provider, ydoc, type, monacoBinding }
+  window.example = { provider, ydoc, ytext, monacoBinding }
 })

@@ -144,7 +144,7 @@ window.addEventListener('load', () => {
   permanentUserData.setUserMapping(ydoc, ydoc.clientID, user.username)
   ydoc.gc = false
   const provider = new WebsocketProvider('wss://demos.yjs.dev', 'prosemirror-versions-demo', ydoc)
-  const type = ydoc.get('prosemirror', Y.XmlFragment)
+  const yXmlFragment = ydoc.get('prosemirror', Y.XmlFragment)
 
   const editor = document.createElement('div')
   editor.setAttribute('id', 'editor')
@@ -154,7 +154,7 @@ window.addEventListener('load', () => {
     state: EditorState.create({
       schema,
       plugins: [
-        ySyncPlugin(type, { permanentUserData, colors }),
+        ySyncPlugin(yXmlFragment, { permanentUserData, colors }),
         yCursorPlugin(provider.awareness),
         yUndoPlugin(),
         keymap({
@@ -180,5 +180,5 @@ window.addEventListener('load', () => {
     }
   })
 
-  window.example = { provider, ydoc, type, prosemirrorView }
+  window.example = { provider, ydoc, yXmlFragment, prosemirrorView }
 })

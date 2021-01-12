@@ -23,7 +23,7 @@ window.addEventListener('load', () => {
   console.log(`Collaborating on ${skey} ${givenDatKey === null ? '(generated)' : '(from parameter)'}`)
   location.hash = '#' + skey
 
-  const type = ydoc.getXmlFragment('prosemirror')
+  const yXmlFragment = ydoc.getXmlFragment('prosemirror')
 
   const editor = document.createElement('div')
   editor.setAttribute('id', 'editor')
@@ -33,7 +33,7 @@ window.addEventListener('load', () => {
     state: EditorState.create({
       schema,
       plugins: [
-        ySyncPlugin(type),
+        ySyncPlugin(yXmlFragment),
         yCursorPlugin(provider.awareness),
         yUndoPlugin(),
         keymap({
@@ -47,5 +47,5 @@ window.addEventListener('load', () => {
   document.body.insertBefore(editorContainer, null)
 
   // @ts-ignore
-  window.example = { provider, ydoc, type, prosemirrorView }
+  window.example = { provider, ydoc, yXmlFragment, prosemirrorView }
 })
