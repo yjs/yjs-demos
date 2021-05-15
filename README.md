@@ -2,7 +2,7 @@
 # Yjs Demos [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/yjs/yjs-demos)
 > A starting point for your own ideas - PRs welcome
 
-We have a more complete [Getting Started Guide](https://docs.yjs.dev/getting-started/a-collaborative-editor) in our official documantion website.
+We have a more complete [Getting Started Guide](https://docs.yjs.dev/getting-started/a-collaborative-editor) in our official documentation website.
 
 * Shared Editing using the [ProseMirror](http://prosemirror.net/) editor - [Open Directory](./prosemirror/)
 * Shared Editing using the [ProseMirror](http://prosemirror.net/) editor with
