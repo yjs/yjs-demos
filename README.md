@@ -4,6 +4,7 @@
 
 We have a more complete [Getting Started Guide](https://docs.yjs.dev/getting-started/a-collaborative-editor) in our official documentation website.
 
+* 3D model collaboration using the [Vertex Viewer](https://developer.vertexvis.com/). [Open Demo Site](https://collaboration.vertexvis.io/).
 * Shared Editing using the [ProseMirror](http://prosemirror.net/) editor - [Open Directory](./prosemirror/)
 * Shared Editing using the [ProseMirror](http://prosemirror.net/) editor with
   versioning support - [Open Directory](./prosemirror-versions/)
