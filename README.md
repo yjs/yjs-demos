@@ -16,7 +16,9 @@ We have a more complete [Getting Started Guide](https://docs.yjs.dev/getting-sta
   editor - [Open Directory](./monaco/)
 * Shared Editing using the [CodeMirror](https://codemirror.net/)
   editor - [Open Directory](./codemirror/)
-* Shared Editing using the [TipTap](https://tiptap.scrumpy.io/)
+* Shared Editing using the [CodeMirror.next](https://codemirror.net/6/)
+  editor - [Open Directory](./codemirror.next/)
+* Shared Editing using the [TipTap](https://tiptap.dev/)
   editor - [Open Directory](./tiptap/)
 
 ## Getting Started
