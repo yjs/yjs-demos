@@ -10,11 +10,10 @@ module.exports = {
     globalObject: 'self',
     path: path.resolve(__dirname, './dist/'),
     filename: '[name].bundle.js',
-    publicPath: '/prosemirror-versions/dist/'
+    publicPath: '/dist/'
   },
   devServer: {
-    contentBase: path.join(__dirname),
     compress: true,
-    publicPath: '/dist/'
+    static: '.'
   }
 }

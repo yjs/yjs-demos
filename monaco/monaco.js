@@ -5,24 +5,24 @@ import { WebsocketProvider } from 'y-websocket'
 import { MonacoBinding } from 'y-monaco'
 import * as monaco from 'monaco-editor'
 
-// @ts-ignore
-window.MonacoEnvironment = {
-  getWorkerUrl: function (moduleId, label) {
-    if (label === 'json') {
-      return '/monaco/dist/json.worker.bundle.js'
-    }
-    if (label === 'css') {
-      return '/monaco/dist/css.worker.bundle.js'
-    }
-    if (label === 'html') {
-      return '/monaco/dist/html.worker.bundle.js'
-    }
-    if (label === 'typescript' || label === 'javascript') {
-      return '/monaco/dist/ts.worker.bundle.js'
-    }
-    return '/monaco/dist/editor.worker.bundle.js'
-  }
-}
+// // @ts-ignore
+// window.MonacoEnvironment = {
+//   getWorkerUrl: function (moduleId, label) {
+//     if (label === 'json') {
+//       return '/monaco/dist/json.worker.bundle.js'
+//     }
+//     if (label === 'css') {
+//       return '/monaco/dist/css.worker.bundle.js'
+//     }
+//     if (label === 'html') {
+//       return '/monaco/dist/html.worker.bundle.js'
+//     }
+//     if (label === 'typescript' || label === 'javascript') {
+//       return '/monaco/dist/ts.worker.bundle.js'
+//     }
+//     return '/monaco/dist/editor.worker.bundle.js'
+//   }
+// }
 
 window.addEventListener('load', () => {
   const ydoc = new Y.Doc()

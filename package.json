@@ -12,16 +12,13 @@
     "test": "standard",
     "start": "cd demo-server && npm start",
     "dist:demo-server": "cd demo-server && npm ci",
-    "dist:pm-dat": "cd prosemirror-dat && npm i && npm run dist",
     "dist:cm": "cd codemirror && npm ci && npm run dist",
     "dist:cm6": "cd codemirror.next && npm ci && npm run dist",
-    "dist:atlaskit": "cd atlaskit && npm ci && npm run dist",
     "dist:pm": "cd prosemirror && npm ci && npm run dist",
     "dist:pm-versions": "cd prosemirror-versions && npm ci && npm run dist",
     "dist:quill": "cd quill && npm ci && npm run dist",
     "dist:monaco": "cd monaco && npm ci && npm run dist",
-    "dist:tiptap": "cd tiptap && npm ci && npm run dist",
-    "dist-all": "npm run dist:demo-server && npm run dist:pm-dat && npm run dist:cm && npm run dist:cm6 && npm run dist:atlaskit && npm run dist:pm && npm run dist:pm-versions && npm run dist:quill && npm run dist:monaco && npm run dist:tiptap",
+    "dist-all": "npm run dist:demo-server && npm run dist:cm && npm run dist:cm6 && npm run dist:pm && npm run dist:pm-versions && npm run dist:quill && npm run dist:monaco",
     "lint": "standard",
     "postinstall": "npm run dist-all"
   },
@@ -34,10 +31,9 @@
     ]
   },
   "engines": {
-    "node": "^14.0.0"
+    "node": ">=16.0.0"
   },
   "devDependencies": {
-    "standard": "^16.0.3",
-    "webpack-dev-server": "^4.6.0"
+    "standard": "^16.0.3"
   }
 }
