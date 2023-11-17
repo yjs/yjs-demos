@@ -1,7 +1,7 @@
 {
-  "name": "yjs-codemirror-demo",
+  "name": "yjs-codemirror-next-demo",
   "version": "1.0.0",
-  "description": "Yjs ❤ Atlaskit",
+  "description": "Yjs ❤ CodeMirror",
   "scripts": {
     "dist": "webpack --mode=production",
     "start": "webpack serve --open --open-page codemirror.next.html"
