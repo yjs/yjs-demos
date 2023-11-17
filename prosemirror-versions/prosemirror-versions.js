@@ -143,7 +143,7 @@ window.addEventListener('load', () => {
   const permanentUserData = new Y.PermanentUserData(ydoc)
   permanentUserData.setUserMapping(ydoc, ydoc.clientID, user.username)
   ydoc.gc = false
-  const provider = new WebsocketProvider('wss://demos.yjs.dev', 'prosemirror-versions-demo', ydoc)
+  const provider = new WebsocketProvider('ws://localhost:1234', 'prosemirror-versions-demo', ydoc)
   const yXmlFragment = ydoc.get('prosemirror', Y.XmlFragment)
 
   const editor = document.createElement('div')
