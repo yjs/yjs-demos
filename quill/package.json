@@ -13,9 +13,7 @@
     "quill-cursors": "^2.2.1",
     "y-quill": "^0.1.4",
     "y-websocket": "^1.4.1",
-    "yjs": "^13.5.8"
-  },
-  "devDependencies": {
+    "yjs": "^13.5.8",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"

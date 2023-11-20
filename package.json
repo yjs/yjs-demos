@@ -12,15 +12,15 @@
     "test": "standard",
     "start": "cd demo-server && npm start",
     "dist:demo-server": "cd demo-server && npm ci",
-    "dist:cm": "cd codemirror && npm ci && npm run dist",
+    "dist:cm": "cd codemirror && npm i && npm run dist",
     "dist:cm6": "cd codemirror.next && npm ci && npm run dist",
     "dist:pm": "cd prosemirror && npm ci && npm run dist",
     "dist:pm-versions": "cd prosemirror-versions && npm ci && npm run dist",
     "dist:quill": "cd quill && npm ci && npm run dist",
     "dist:monaco": "cd monaco && npm ci && npm run dist",
-    "dist-all": "npm run dist:demo-server && npm run dist:cm && npm run dist:cm6 && npm run dist:pm && npm run dist:pm-versions && npm run dist:quill && npm run dist:monaco",
+    "dist:all": "npm run dist:demo-server && npm run dist:cm && npm run dist:cm6 && npm run dist:pm && npm run dist:pm-versions && npm run dist:quill && npm run dist:monaco",
     "lint": "standard",
-    "postinstall": "npm run dist-all"
+    "deploy": "fly deploy --ha=false"
   },
   "author": "Kevin Jahns <kevin.jahns@protonmail.com",
   "license": "UNLICENSE",
@@ -34,6 +34,7 @@
     "node": ">=16.0.0"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.4.10",
     "standard": "^16.0.3"
   }
 }
