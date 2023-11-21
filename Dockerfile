@@ -19,7 +19,7 @@ FROM base as build
 # Install packages needed to build node modules
 RUN apt-get update -qq && \
     apt-get install -y build-essential pkg-config python-is-python3
-RUN npm i -g webpack-cli
+RUN npm i -g webpack-cli pm2
 
 # Copy application code
 COPY --link . .
@@ -35,4 +35,4 @@ COPY --from=build /app /app
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
-CMD [ "npm", "run", "start" ]
+CMD [ "npm", "run", "pm2"]

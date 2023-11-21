@@ -20,7 +20,11 @@
     "dist:monaco": "cd monaco && npm ci && npm run dist",
     "dist:all": "npm run dist:demo-server && npm run dist:cm && npm run dist:cm6 && npm run dist:pm && npm run dist:pm-versions && npm run dist:quill && npm run dist:monaco",
     "lint": "standard",
-    "deploy": "fly deploy --ha=false"
+    "deploy": "fly deploy --ha=false",
+    "pm2": "cd demo-server && pm2-runtime start ./demo-server.js",
+    "container:build": "docker build . -t yjs-demos",
+    "container:run": "docker run -p 3000:3000 --name yjs-demos yjs-demos",
+    "container:stop": "docker stop yjs-demos && docker remove yjs-demos"
   },
   "author": "Kevin Jahns <kevin.jahns@protonmail.com",
   "license": "UNLICENSE",
@@ -36,5 +40,8 @@
   "devDependencies": {
     "@flydotio/dockerfile": "^0.4.10",
     "standard": "^16.0.3"
+  },
+  "dependencies": {
+    "pm2": "^5.3.0"
   }
 }
