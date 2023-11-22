@@ -21,7 +21,8 @@
     "dist:all": "npm run dist:demo-server && npm run dist:cm && npm run dist:cm6 && npm run dist:pm && npm run dist:pm-versions && npm run dist:quill && npm run dist:monaco",
     "lint": "standard",
     "deploy": "fly deploy --ha=false",
-    "pm2": "cd demo-server && pm2-runtime start ./demo-server.js",
+    "pm2_alt": "cd demo-server && pm2-runtime start ./demo-server.js",
+    "pm2": "cd demo-server && npm start",
     "container:build": "docker build . -t yjs-demos",
     "container:run": "docker run -p 3000:3000 --name yjs-demos yjs-demos",
     "container:stop": "docker stop yjs-demos && docker remove yjs-demos"
