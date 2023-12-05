@@ -25,7 +25,8 @@
     "pm2": "cd demo-server && npm start",
     "container:build": "docker build . -t yjs-demos",
     "container:run": "docker run -p 3000:3000 --name yjs-demos yjs-demos",
-    "container:stop": "docker stop yjs-demos && docker remove yjs-demos"
+    "container:stop": "docker stop yjs-demos && docker remove yjs-demos",
+    "postinstall": "npm run dist:all"
   },
   "author": "Kevin Jahns <kevin.jahns@protonmail.com",
   "license": "UNLICENSE",
