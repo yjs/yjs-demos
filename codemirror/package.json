@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Yjs ❤ CodeMirror",
   "scripts": {
-    "dist": "npx webpack --mode=production",
+    "dist": "webpack --mode=production",
     "start": "webpack serve --open --open-page codemirror.html"
   },
   "author": "Kevin Jahns <kevin.jahns@pm.me>",
