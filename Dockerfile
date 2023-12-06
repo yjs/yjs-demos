@@ -1,4 +1,4 @@
-# syntax = docker/dockerfile:1
+# syntax = docker/dockerfile:1.4
 
 # Adjust NODE_VERSION as desired
 ARG NODE_VERSION=20.5.1
@@ -22,9 +22,10 @@ RUN apt-get update -qq && \
 RUN npm i -g webpack-cli pm2
 
 # Copy application code
-COPY . .
+COPY --link . .
 
 RUN npm ci
+RUN npm run dist:all
 
 # Final stage for app image
 FROM base

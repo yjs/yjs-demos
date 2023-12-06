@@ -2,7 +2,7 @@
   "name": "yjs-demos",
   "version": "0.0.0",
   "private": true,
-  "description": "You can ignore this package.json. We only need it for deploying the demos to our CDN.",
+  "description": "You can ignore this package.json. We only need it for eploying the demos to our CDN.",
   "funding": {
     "type": "GitHub Sponsors ❤",
     "url": "https://github.com/sponsors/dmonad"
@@ -25,8 +25,7 @@
     "pm2": "cd demo-server && npm start",
     "container:build": "docker build . -t yjs-demos",
     "container:run": "docker run -p 3000:3000 --name yjs-demos yjs-demos",
-    "container:stop": "docker stop yjs-demos && docker remove yjs-demos",
-    "postinstall": "npm run dist:all"
+    "container:stop": "docker stop yjs-demos && docker remove yjs-demos"
   },
   "author": "Kevin Jahns <kevin.jahns@protonmail.com",
   "license": "UNLICENSE",
@@ -40,10 +39,10 @@
     "node": ">=16.0.0"
   },
   "devDependencies": {
-    "@flydotio/dockerfile": "^0.4.10",
-    "standard": "^16.0.3"
-  },
-  "dependencies": {
-    "pm2": "^5.3.0"
+    "pm2": "^5.3.0",
+    "standard": "^16.0.3",
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^3.11.3"
   }
 }
