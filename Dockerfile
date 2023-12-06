@@ -19,11 +19,11 @@ FROM base as build
 # Install packages needed to build node modules
 RUN apt-get update -qq && \
     apt-get install -y build-essential pkg-config python-is-python3
-RUN npm i -g webpack-cli pm2
 
 # Copy application code
 COPY . .
 
+RUN npm i -g webpack-cli pm2
 RUN npm ci
 RUN npm run dist:all
 
