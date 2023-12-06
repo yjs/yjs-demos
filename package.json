@@ -38,7 +38,7 @@
   "engines": {
     "node": ">=16.0.0"
   },
-  "devDependencies": {
+  "dependencies": {
     "pm2": "^5.3.0",
     "standard": "^16.0.3",
     "webpack": "^5.64.4",
