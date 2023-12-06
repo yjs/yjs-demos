@@ -12,7 +12,7 @@
     "test": "standard",
     "start": "cd demo-server && npm start",
     "dist:demo-server": "cd demo-server && npm ci",
-    "dist:cm": "cd codemirror && npm i && npm run dist",
+    "dist:cm": "cd codemirror && npm ci && npm run dist",
     "dist:cm6": "cd codemirror.next && npm ci && npm run dist",
     "dist:pm": "cd prosemirror && npm ci && npm run dist",
     "dist:pm-versions": "cd prosemirror-versions && npm ci && npm run dist",
