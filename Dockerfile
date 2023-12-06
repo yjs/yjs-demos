@@ -22,10 +22,9 @@ RUN apt-get update -qq && \
 RUN npm i -g webpack-cli pm2
 
 # Copy application code
-COPY --link . .
+COPY . .
 
 RUN npm ci
-RUN npm run dist:all
 
 # Final stage for app image
 FROM base
