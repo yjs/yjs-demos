@@ -8,7 +8,8 @@
     "url": "https://github.com/sponsors/dmonad"
   },
   "scripts": {
-    "start": "export PRODUCTION=1; node ./demo-server.js"
+    "start": "export PRODUCTION=1; node ./demo-server.js",
+    "start:nostatic": "export PRODUCTION=1; node ./demo-server.js --nostatic"
   },
   "author": "Kevin Jahns <kevin.jahns@protonmail.com",
   "license": "MIT",

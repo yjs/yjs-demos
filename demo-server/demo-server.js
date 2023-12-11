@@ -6,14 +6,16 @@ const WebSocket = require('ws')
 const http = require('http')
 const StaticServer = require('node-static').Server
 const setupWSConnection = require('y-websocket/bin/utils').setupWSConnection
+const env = require('lib0/environment')
+const nostatic = env.hasParam('--nostatic')
 
 const production = process.env.PRODUCTION != null
 const port = process.env.PORT || 3000
 
-const staticServer = new StaticServer('../', { cache: production ? 3600 : false, gzip: production })
+const staticServer = nostatic ? null : new StaticServer('../', { cache: production ? 3600 : false, gzip: production })
 
 const server = http.createServer((request, response) => {
-  if (!(request.url || '').startsWith('/ws/')) {
+  if (staticServer && !(request.url || '').startsWith('/ws/')) {
     request.addListener('end', () => {
       staticServer.serve(request, response)
     }).resume()
@@ -27,4 +29,4 @@ wss.on('connection', (conn, req) => {
 
 server.listen(port, '0.0.0.0')
 
-console.log(`Listening to http://localhost:${port} ${production ? '(production)' : ''}`)
+console.log(`Listening to http://localhost:${port} (${production ? 'production + ' : ''} ${nostatic ? 'no static content' : 'serving static content'})`)
