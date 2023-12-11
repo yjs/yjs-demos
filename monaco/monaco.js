@@ -26,7 +26,7 @@ import * as monaco from 'monaco-editor'
 
 window.addEventListener('load', () => {
   const ydoc = new Y.Doc()
-  const provider = new WebsocketProvider('wss://demos.yjs.dev', 'monaco-demo', ydoc)
+  const provider = new WebsocketProvider('wss://demos.yjs.dev/ws', 'monaco-demo', ydoc)
   const ytext = ydoc.getText('monaco')
 
   const editor = monaco.editor.create(/** @type {HTMLElement} */ (document.getElementById('monaco-editor')), {
