@@ -15,6 +15,14 @@ const port = process.env.PORT || 3000
 const staticServer = nostatic ? null : new StaticServer('../', { cache: production ? 3600 : false, gzip: production })
 
 const server = http.createServer((request, response) => {
+  if (request.url === '/health') {
+    response.writeHead(200, { 'Content-Type': 'application/json' })
+    response.end(JSON.stringify({
+      response: 'ok'
+    }))
+    return
+  }
+
   if (staticServer && !(request.url || '').startsWith('/ws/')) {
     request.addListener('end', () => {
       staticServer.serve(request, response)
