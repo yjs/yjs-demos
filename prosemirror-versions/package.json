@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Yjs ❤ ProseMirror + versioning support",
   "scripts": {
+    "watch": "webpack -w --stats errors-only",
     "dist": "webpack --mode=production",
     "start": "webpack serve --open prosemirror-versions.html"
   },

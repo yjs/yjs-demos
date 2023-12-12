@@ -5,6 +5,7 @@
   "author": "Kevin Jahns <kevin.jahns@pm.me>",
   "license": "UNLICENSE",
   "scripts": {
+    "watch": "webpack -w --stats errors-only",
     "dist": "webpack --mode=production",
     "start": "webpack serve --open quill.html"
   },

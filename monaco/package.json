@@ -4,6 +4,7 @@
   "description": "Yjs ❤ Monaco",
   "main": "index.js",
   "scripts": {
+    "watch": "webpack -w --stats errors-only",
     "dist": "webpack --mode=production",
     "start": "webpack serve --open --open-page monaco.html"
   },

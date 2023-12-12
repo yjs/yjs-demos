@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Yjs ❤ CodeMirror",
   "scripts": {
+    "watch": "webpack -w --stats errors-only",
     "dist": "webpack --mode=production",
     "start": "webpack serve --open --open-page codemirror.next.html"
   },
