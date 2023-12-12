@@ -23,7 +23,7 @@ RUN apt-get update -qq && \
 # Copy application code
 COPY . .
 
-RUN npm i -g webpack-cli pm2
+RUN npm i -g webpack-cli
 RUN npm ci
 RUN npm run dist:all
 
@@ -35,4 +35,4 @@ COPY --from=build /app /app
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
-CMD [ "npm", "run", "pm2"]
+CMD [ "npm", "start"]
