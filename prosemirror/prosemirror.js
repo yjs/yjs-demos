@@ -11,7 +11,12 @@ import { keymap } from 'prosemirror-keymap'
 
 window.addEventListener('load', () => {
   const ydoc = new Y.Doc()
-  const provider = new WebsocketProvider('wss://demos.yjs.dev/ws', 'prosemirror-demo', ydoc)
+  const provider = new WebsocketProvider(
+    `ws${location.protocol.slice(4)}//${location.host}/ws`, // use the local ws server
+    // 'wss://demos.yjs.dev/ws', // alternatively use the public ws server
+    'prosemirror-demo',
+    ydoc
+  )
   const yXmlFragment = ydoc.getXmlFragment('prosemirror')
 
   const editor = document.createElement('div')

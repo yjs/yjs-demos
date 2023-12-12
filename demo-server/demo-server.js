@@ -43,7 +43,9 @@ setInterval(() => {
   docs.forEach(doc => { conns += doc.conns.size })
   const stats = {
     conns,
-    docs: docs.size
+    docs: docs.size,
+    websocket: `ws://localhost:${port}`,
+    http: `http://localhost:${port}`
   }
   console.log(`${new Date().toISOString()} Stats: ${JSON.stringify(stats)}`)
 }, 10000)
