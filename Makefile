@@ -24,7 +24,7 @@ node_modules : package.json package-lock.json
 
 .SECONDEXPANSION:
 
-ifeq ($(MAKECMDGOALS),serve)
+ifeq ($(MAKECMDGOALS),_serve)
 $(dists) : %/dist : %/node_modules node_modules
 	cd $* && npm run watch
 .PHONY: $(dists)
@@ -41,11 +41,11 @@ demo-server : $(node_modules) node_modules
 	cd demo-server && npm start
 .PHONY : demo-server
 
-# Build & watch all scripts. Also start the demo-server
 # Requires parallel execution of make targets
-ifneq (,$(findstring -j,-$(MAKEFLAGS)))
-serve: demo-server $(demos)
-else
+_serve: demo-server $(demos)
+
+# Start demo server and build & watch all demos in parallel
 serve:
-	@$(MAKE) -j serve
-endif
+	@$(MAKE) -j _serve
+
+
