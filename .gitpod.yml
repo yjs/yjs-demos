@@ -1,6 +1,6 @@
 tasks:
   - init: npm i
-    command: cd demo-server && npm run start
+    command: npm start
 ports:
-  - port: 8080
+  - port: 3000
     onOpen: open-preview
