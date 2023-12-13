@@ -11,6 +11,7 @@
     "clean": "make clean",
     "test": "standard",
     "start": "make serve",
+    "demo-server": "cd demo-server && npm ci && npm start",
     "dist": "make",
     "lint": "standard",
     "container:build": "docker build . -t yjs-demos",

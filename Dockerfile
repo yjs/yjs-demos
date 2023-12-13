@@ -24,8 +24,7 @@ RUN apt-get update -qq && \
 COPY . .
 
 RUN npm i -g webpack-cli
-RUN npm ci
-RUN npm run dist:all
+RUN make
 
 # Final stage for app image
 FROM base
@@ -35,4 +34,4 @@ COPY --from=build /app /app
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
-CMD [ "npm", "start"]
+CMD [ "npm", "run", "demo-server"]
