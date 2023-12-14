@@ -2,13 +2,16 @@ demos = monaco codemirror codemirror.next prosemirror prosemirror-versions quill
 dists = $(patsubst %,%/dist,$(demos))
 node_modules = $(patsubst %,%/node_modules,$(demos)) demo-server/node_modules
 
-all : $(demos)
+.PHONY: help
+help: # Show help for each of the Makefile recipes.
+	@grep -E '^[a-zA-Z0-9 -]+:.*#'  Makefile | while read -r l; do printf "\033[1;32m$$(echo $$l | cut -f 1 -d':')\033[00m:$$(echo $$l | cut -f 2- -d'#')\n"; done
 
-# remove all generated files
-clean :
+dist: $(demos) # Build all distribution files
+
+clean : # remove all generated files
 	rm -rf */dist */node_modules node_modules
 
-static-content :
+static-content : # Build the demos so that they can be served via a CDN
 	make -j all
 	rm -rf node_modules */node_modules
 
@@ -34,18 +37,16 @@ $(dists) : %/dist : node_modules %/node_modules $$(filter-out %/dist %/node_modu
 	@touch $@
 endif
 
-$(demos) : % : %/dist
+$(demos) : % : %/dist # Build a specific demo
 .PHONY : $(demos)
 
-demo-server : $(node_modules) node_modules
+demo-server : demo-server/node_modules 
 	cd demo-server && npm start
 .PHONY : demo-server
 
 # Requires parallel execution of make targets
 _serve: demo-server $(demos)
 
-# Start demo server and build & watch all demos in parallel
-serve:
+serve: # Start demo server and build & watch all demos in parallel
 	@$(MAKE) -j _serve
-
 

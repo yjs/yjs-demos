@@ -12,7 +12,7 @@
     "test": "standard",
     "start": "make serve",
     "demo-server": "cd demo-server && npm ci && npm start",
-    "dist": "make",
+    "dist": "make dist",
     "lint": "standard",
     "container:build": "docker build . -t yjs-demos",
     "container:run": "docker run -p 3000:3000 --name yjs-demos yjs-demos",
