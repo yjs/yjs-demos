@@ -24,7 +24,7 @@ RUN apt-get update -qq && \
 COPY . .
 
 RUN npm i -g webpack-cli
-RUN make
+RUN make static-content
 
 # Final stage for app image
 FROM base

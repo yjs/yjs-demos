@@ -6,13 +6,15 @@ node_modules = $(patsubst %,%/node_modules,$(demos)) demo-server/node_modules
 help: # Show help for each of the Makefile recipes.
 	@grep -E '^[a-zA-Z0-9 -]+:.*#'  Makefile | while read -r l; do printf "\033[1;32m$$(echo $$l | cut -f 1 -d':')\033[00m:$$(echo $$l | cut -f 2- -d'#')\n"; done
 
+.PHONY: dist
 dist: $(demos) # Build all distribution files
 
+.PHONY: clean
 clean : # remove all generated files
 	rm -rf */dist */node_modules node_modules
 
 static-content : # Build the demos so that they can be served via a CDN
-	make -j all
+	make -j dist
 	rm -rf node_modules */node_modules
 
 $(node_modules) : %/node_modules: %/package.json %/package-lock.json
