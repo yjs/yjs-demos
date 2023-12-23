@@ -72,7 +72,7 @@ const unrenderVersion = editorview => {
  * @param {Version} version
  * @param {Version|null} prevSnapshot
  */
-const versionTemplate = (editorview, version, prevSnapshot) => html`<div class="version-list" @click=${e => renderVersion(editorview, version, prevSnapshot)}>${new Date(version.date).toLocaleString()}</div>`
+const versionTemplate = (editorview, version, prevSnapshot) => html`<div class="version-list" @click=${() => renderVersion(editorview, version, prevSnapshot)}>${new Date(version.date).toLocaleString()}</div>`
 
 const versionList = (editorview, doc) => {
   const versions = doc.getArray('versions')
@@ -80,7 +80,7 @@ const versionList = (editorview, doc) => {
 }
 
 const snapshotButton = doc => {
-  return html`<button @click=${(e) => addVersion(doc)}>Snapshot</button>`
+  return html`<button @click=${() => addVersion(doc)}>Snapshot</button>`
 }
 
 /**
@@ -94,7 +94,7 @@ export const attachVersion = (parent, doc, editorview) => {
     render(html`<div class="version-modal" ?hidden=${open}>${snapshotButton(doc)}${versionList(editorview, doc)}</div>`, vContainer)
   }
   updateLiveTrackingState(editorview)
-  liveTracking.addEventListener('click', e => {
+  liveTracking.addEventListener('click', () => {
     if (liveTracking.checked) {
       const versions = doc.getArray('versions')
       const lastVersion = versions.length > 0 ? Y.decodeSnapshot(versions.get(versions.length - 1).snapshot) : Y.emptySnapshot
