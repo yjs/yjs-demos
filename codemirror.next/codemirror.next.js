@@ -27,8 +27,8 @@ export const userColor = usercolors[random.uint32() % usercolors.length]
 const ydoc = new Y.Doc()
 // const provider = new WebrtcProvider('codemirror6-demo-room', ydoc)
 const provider = new WebsocketProvider(
-  `ws${location.protocol.slice(4)}//${location.host}/ws`, // use the local ws server
-  // 'wss://demos.yjs.dev/ws', // alternatively use the public ws server
+  'wss://demos.yjs.dev/ws', // use the public ws server
+  // `ws${location.protocol.slice(4)}//${location.host}/ws`, // alternatively: use the local ws server (run `npm start` in root directory)
   'codemirror.next-demo',
   ydoc
 )
