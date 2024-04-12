@@ -5,7 +5,7 @@
   "scripts": {
     "watch": "webpack -w --stats errors-only",
     "dist": "webpack --mode=production",
-    "start": "webpack serve --open --open-page codemirror.html"
+    "start": "webpack serve --open codemirror.html"
   },
   "author": "Kevin Jahns <kevin.jahns@pm.me>",
   "license": "UNLICENSE",

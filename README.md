@@ -23,6 +23,7 @@ use one of the demo directories that interests you the most.
 
 ```sh
 git clone https://github.com/yjs/yjs-demos.git
+npm install
 cd yjs-demos/${demo-directory}
 npm install
 npm start

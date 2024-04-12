@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "webpack -w --stats errors-only",
     "dist": "webpack --mode=production",
-    "start": "webpack serve --open --open-page monaco.html"
+    "start": "webpack serve --open monaco.html"
   },
   "author": "Kevin Jahns <kevin.jahns@pm.me>",
   "license": "UNLICENSE",

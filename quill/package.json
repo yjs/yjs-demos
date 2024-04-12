@@ -7,7 +7,7 @@
   "scripts": {
     "watch": "webpack -w --stats errors-only",
     "dist": "webpack --mode=production",
-    "start": "webpack serve --open quill.html"
+    "start": "webpack serve --open ./quill.html"
   },
   "dependencies": {
     "yjs": "^13.5.8",

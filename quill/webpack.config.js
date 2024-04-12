@@ -13,7 +13,7 @@ module.exports = {
     publicPath: '/dist/'
   },
   devServer: {
-    compress: true,
-    static: '.'
+    static: path.join(__dirname),
+    compress: true
   }
 }

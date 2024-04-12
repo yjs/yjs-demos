@@ -26,9 +26,8 @@ module.exports = {
     ]
   },
   devServer: {
-    contentBase: path.join(__dirname),
-    compress: true,
-    publicPath: '/dist/'
+    static: path.join(__dirname),
+    compress: true
   },
   plugins: [new MonacoWebpackPlugin({
     publicPath: './dist/'
