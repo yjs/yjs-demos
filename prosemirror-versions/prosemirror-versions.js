@@ -146,7 +146,7 @@ window.addEventListener('load', () => {
   const provider = new WebsocketProvider(
     'wss://demos.yjs.dev/ws', // use the public ws server
     // `ws${location.protocol.slice(4)}//${location.host}/ws`, // alternatively: use the local ws server (run `npm start` in root directory)
-    'prosemirror-versions-demo',
+    'prosemirror-versions-demo-2024/06',
     ydoc
   )
   const yXmlFragment = ydoc.get('prosemirror', Y.XmlFragment)
