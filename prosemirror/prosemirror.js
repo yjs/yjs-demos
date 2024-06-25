@@ -2,7 +2,7 @@
 
 import * as Y from 'yjs'
 import { WebsocketProvider } from 'y-websocket'
-import { ySyncPlugin, yCursorPlugin, yUndoPlugin, undo, redo } from 'y-prosemirror'
+import { ySyncPlugin, yCursorPlugin, yUndoPlugin, undo, redo, initProseMirrorDoc } from 'y-prosemirror'
 import { EditorState } from 'prosemirror-state'
 import { EditorView } from 'prosemirror-view'
 import { schema } from './schema.js'
@@ -23,11 +23,13 @@ window.addEventListener('load', () => {
   editor.setAttribute('id', 'editor')
   const editorContainer = document.createElement('div')
   editorContainer.insertBefore(editor, null)
+  const { doc, mapping } = initProseMirrorDoc(yXmlFragment, schema)
   const prosemirrorView = new EditorView(editor, {
     state: EditorState.create({
+      doc,
       schema,
       plugins: [
-        ySyncPlugin(yXmlFragment),
+        ySyncPlugin(yXmlFragment, { mapping }),
         yCursorPlugin(provider.awareness),
         yUndoPlugin(),
         keymap({
