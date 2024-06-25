@@ -4,9 +4,10 @@
   "description": "Yjs ❤ Monaco",
   "main": "index.js",
   "scripts": {
+    "ensureBundle": "[ -f ./dist/monaco.bundle.js ] || npm run dist",
     "watch": "webpack -w --stats errors-only",
     "dist": "webpack --mode=production",
-    "start": "webpack serve --open monaco.html"
+    "start": "npm run ensureBundle && webpack serve --open monaco.html"
   },
   "author": "Kevin Jahns <kevin.jahns@pm.me>",
   "license": "UNLICENSE",
