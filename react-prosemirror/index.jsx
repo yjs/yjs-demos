@@ -1,7 +1,7 @@
-import React, { useState } from "react"
+import React from "react"
 import { createRoot } from "react-dom/client"
 import { EditorState } from "prosemirror-state"
-import { ProseMirror } from "@nytimes/react-prosemirror"
+import { ProseMirror, ProseMirrorDoc, reactKeys } from "@handlewithcare/react-prosemirror"
 
 import { exampleSetup } from 'prosemirror-example-setup'
 import { schema } from "prosemirror-schema-basic"
@@ -36,19 +36,14 @@ function App () {
         'Mod-y': redo,
         'Mod-Shift-z': redo
       }),
-      keymap(baseKeymap)
+      keymap(baseKeymap),
+      reactKeys(),
     ].concat(exampleSetup({ schema }))
   });
 
-
-  // It's important that mount is stored as state,
-  // rather than a ref, so that the ProseMirror component
-  // is re-rendered when it's set
-  const [mount, setMount] = useState(null);
-
   return (
-    <ProseMirror mount={mount} defaultState={defaultState}>
-      <div ref={setMount} />
+    <ProseMirror defaultState={defaultState}>
+      <ProseMirrorDoc />
     </ProseMirror>
   );
 }

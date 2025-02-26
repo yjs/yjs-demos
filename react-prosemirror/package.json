@@ -17,13 +17,13 @@
     "react-dom": "^19.0.0"
   },
   "dependencies": {
-    "@nytimes/react-prosemirror": "^1.0.3",
+    "@handlewithcare/react-prosemirror": "^2.2.4",
     "prosemirror-commands": "^1.7.0",
     "prosemirror-example-setup": "^1.2.3",
     "prosemirror-keymap": "^1.2.2",
     "prosemirror-schema-basic": "^1.2.3",
     "prosemirror-schema-list": "^1.5.0",
-    "y-prosemirror": "^1.2.15",
+    "y-prosemirror": "^1.2.16",
     "y-websocket": "^2.1.0",
     "yjs": "^13.6.23"
   }
