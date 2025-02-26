@@ -53,7 +53,5 @@ function App () {
   );
 }
 
-setTimeout(() => {
-  const root = createRoot(document.getElementById('root'))
-  root.render(<App />)
-}, 1000)
+const root = createRoot(document.getElementById('root'))
+root.render(<App />)
