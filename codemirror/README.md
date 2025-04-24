@@ -1,7 +1,7 @@
-# CodeMirror Demo
+# CodeMirror 5 Demo
 > [y-codemirror](https://docs.yjs.dev/ecosystem/editor-bindings/codemirror) / [y-websocket](https://docs.yjs.dev/ecosystem/connection-provider/y-websocket) / [Live Demo](https://demos.yjs.dev/codemirror/codemirror.html)
 
-This is a demo of a [CodeMirror 5](https://codemirror.net/5) editor that was made collaborative with Yjs & y-codemirror. Note that CodeMirror 6 is now the latest release. 
+This is a demo of a [CodeMirror 5](https://codemirror.net/5/) editor that was made collaborative with Yjs & y-codemirror. Note that CodeMirror 6 is now the latest release. 
 
 We use the [y-websocket](https://docs.yjs.dev/ecosystem/connection-provider) provider to share document updates through a server. There are many more providers available for Yjs - try switching to another provider. [See docs](https://docs.yjs.dev/ecosystem/connection-provider).
 
