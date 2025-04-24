@@ -1,4 +1,4 @@
-# ProseMirror Demo
+# CodeMirror Demo
 > [y-codemirror](https://docs.yjs.dev/ecosystem/editor-bindings/codemirror) / [y-websocket](https://docs.yjs.dev/ecosystem/connection-provider/y-websocket) / [Live Demo](https://demos.yjs.dev/codemirror/codemirror.html)
 
 This is a demo of a [CodeMirror 5](https://codemirror.net/5) editor that was made collaborative with Yjs & y-codemirror. Note that CodeMirror 6 is now the latest release. 
