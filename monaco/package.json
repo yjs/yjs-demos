@@ -4,24 +4,20 @@
   "description": "Yjs ❤ Monaco",
   "main": "index.js",
   "scripts": {
+    "ensureBundle": "[ -f ./dist/monaco.bundle.js ] || npm run dist",
+    "watch": "webpack -w --stats errors-only",
     "dist": "webpack --mode=production",
-    "start": "webpack-dev-server --open-page monaco/monaco.html"
+    "start": "npm run ensureBundle && webpack serve --open monaco.html"
   },
   "author": "Kevin Jahns <kevin.jahns@pm.me>",
   "license": "UNLICENSE",
   "dependencies": {
-    "css-loader": "^2.1.1",
-    "monaco-editor": "^0.21.2",
-    "serve": "^11.3.2",
-    "style-loader": "^0.23.1",
-    "webpack": "^4.46.0",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.2",
+    "yjs": "^13.5.8",
     "y-monaco": "0.1.2",
     "y-websocket": "^1.3.15",
-    "yjs": "^13.5.8"
-  },
-  "devDependencies": {
-    "file-loader": "^6.2.0"
+    "monaco-editor": "^0.44.0",
+    "css-loader": "^6.8.1",
+    "monaco-editor-webpack-plugin": "^7.1.0",
+    "style-loader": "^3.3.3"
   }
 }

@@ -10,11 +10,10 @@ module.exports = {
     globalObject: 'self',
     path: path.resolve(__dirname, './dist/'),
     filename: '[name].bundle.js',
-    publicPath: '/quill/dist/'
+    publicPath: '/dist/'
   },
   devServer: {
-    contentBase: path.join(__dirname),
-    compress: true,
-    publicPath: '/dist/'
+    static: path.join(__dirname),
+    compress: true
   }
 }

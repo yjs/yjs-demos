@@ -1,0 +1,21 @@
+{
+  "name": "playground",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "concurrently \"npm run lib-build-dev\" \"vite\""
+  },
+  "dependencies": {
+    "@monaco-editor/react": "^4.6.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "state-local": "^1.0.7",
+    "y-monaco": "^0.1.5",
+    "y-websocket": "^2.0.3",
+    "yjs": "^13.6.16"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react-swc": "^3.2.0",
+    "concurrently": "^7.0.0",
+    "vite": "^4.1.4"
+  }
+}
