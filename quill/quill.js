@@ -7,13 +7,14 @@ import Quill from 'quill'
 import QuillCursors from 'quill-cursors'
 
 Quill.register('modules/cursors', QuillCursors)
+const roomname = `codemirror-demo-${new Date().toLocaleDateString('en-CA')}`
 
 window.addEventListener('load', () => {
   const ydoc = new Y.Doc()
   const provider = new WebsocketProvider(
     'wss://demos.yjs.dev/ws', // use the public ws server
     // `ws${location.protocol.slice(4)}//${location.host}/ws`, // alternatively: use the local ws server (run `npm start` in root directory)
-    'quill-demo-2024/06',
+    roomname,
     ydoc
   )
   const ytext = ydoc.getText('quill')

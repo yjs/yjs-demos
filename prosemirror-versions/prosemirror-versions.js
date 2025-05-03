@@ -13,6 +13,8 @@ import { html, render } from 'lit-html'
 import * as dom from 'lib0/dom.js'
 import * as pair from 'lib0/pair.js'
 
+const roomname = `prosemirror-versions-demo-${new Date().toLocaleDateString('en-CA')}`
+
 /**
  * @typedef {Object} Version
  * @property {number} date
@@ -146,7 +148,7 @@ window.addEventListener('load', () => {
   const provider = new WebsocketProvider(
     'wss://demos.yjs.dev/ws', // use the public ws server
     // `ws${location.protocol.slice(4)}//${location.host}/ws`, // alternatively: use the local ws server (run `npm start` in root directory)
-    'prosemirror-versions-demo-2024/06',
+    roomname,
     ydoc
   )
   const yXmlFragment = ydoc.get('prosemirror', Y.XmlFragment)

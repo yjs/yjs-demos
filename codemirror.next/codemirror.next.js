@@ -11,6 +11,8 @@ import { javascript } from '@codemirror/lang-javascript'
 
 import * as random from 'lib0/random'
 
+const roomname = `codemirror-demo-${new Date().toLocaleDateString('en-CA')}`
+
 export const usercolors = [
   { color: '#30bced', light: '#30bced33' },
   { color: '#6eeb83', light: '#6eeb8333' },
@@ -30,7 +32,7 @@ const provider = new WebsocketProvider(
   'wss://demos.yjs.dev/ws', // use the public ws server
   // `ws${location.protocol.slice(4)}//${location.host}/ws`, // alternatively: use the local ws server (run `npm start` in root directory)
   // 'ws://localhost:3334',
-  'codemirror.next-demo-2024/06',
+  roomname,
   ydoc
 )
 const ytext = ydoc.getText('codemirror')

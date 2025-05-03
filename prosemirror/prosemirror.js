@@ -9,12 +9,14 @@ import { schema } from './schema.js'
 import { exampleSetup } from 'prosemirror-example-setup'
 import { keymap } from 'prosemirror-keymap'
 
+const roomname = `prosemirror-demo-${new Date().toLocaleDateString('en-CA')}`
+
 window.addEventListener('load', () => {
   const ydoc = new Y.Doc()
   const provider = new WebsocketProvider(
     'wss://demos.yjs.dev/ws', // use the public ws server
     // `ws${location.protocol.slice(4)}//${location.host}/ws`, // alternatively: use the local ws server (run `npm start` in root directory)
-    'prosemirror-demo-2024/06',
+    roomname,
     ydoc
   )
   const yXmlFragment = ydoc.getXmlFragment('prosemirror')

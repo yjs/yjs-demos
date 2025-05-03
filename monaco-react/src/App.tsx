@@ -5,6 +5,8 @@ import { MonacoBinding } from 'y-monaco'
 import React, { useEffect, useMemo, useState } from 'react'
 import Editor from '@monaco-editor/react'
 
+const roomname = `monaco-react-demo-${new Date().toLocaleDateString('en-CA')}`
+
 function App() {
   const ydoc = useMemo(() => new Y.Doc(), [])
   const [editor, setEditor] = useState<any|null>(null)
@@ -13,7 +15,7 @@ function App() {
 
   // this effect manages the lifetime of the Yjs document and the provider
   useEffect(() => {
-    const provider = new WebsocketProvider('wss://demos.yjs.dev/ws', 'monaco-react-2', ydoc)
+    const provider = new WebsocketProvider('wss://demos.yjs.dev/ws', roomname, ydoc)
     setProvider(provider)
     return () => {
       provider?.destroy()

@@ -12,12 +12,13 @@ import * as Y from 'yjs'
 import { WebsocketProvider } from 'y-websocket'
 import { ySyncPlugin, yCursorPlugin, yUndoPlugin, undo, redo, initProseMirrorDoc } from 'y-prosemirror'
 
+const roomname = `prosemirror-react-demo-${new Date().toLocaleDateString('en-CA')}`
 
 const ydoc = new Y.Doc()
 const provider = new WebsocketProvider(
   'wss://demos.yjs.dev/ws', // use the public ws server
   // `ws${location.protocol.slice(4)}//${location.host}/ws`, // alternatively: use the local ws server (run `npm start` in root directory)
-  'prosemirror-demo-2024/06',
+  roomname,
   ydoc
 )
 
@@ -41,12 +42,16 @@ function App () {
     ].concat(exampleSetup({ schema }))
   });
 
+  window.example = { ydoc, provider, yXmlFragment, pmDoc: doc }
+
   return (
     <ProseMirror defaultState={defaultState}>
       <ProseMirrorDoc />
     </ProseMirror>
   );
+
 }
 
 const root = createRoot(document.getElementById('root'))
 root.render(<App />)
+
