@@ -1,12 +1,12 @@
-import React from "react"
-import { createRoot } from "react-dom/client"
-import { EditorState } from "prosemirror-state"
-import { ProseMirror, ProseMirrorDoc, reactKeys } from "@handlewithcare/react-prosemirror"
+import React from 'react'
+import { createRoot } from 'react-dom/client'
+import { EditorState } from 'prosemirror-state'
+import { ProseMirror, ProseMirrorDoc, reactKeys } from '@handlewithcare/react-prosemirror'
 
 import { exampleSetup } from 'prosemirror-example-setup'
-import { schema } from "prosemirror-schema-basic"
-import {keymap} from "prosemirror-keymap"
-import {baseKeymap} from "prosemirror-commands"
+import { schema } from 'prosemirror-schema-basic'
+import { keymap } from 'prosemirror-keymap'
+import { baseKeymap } from 'prosemirror-commands'
 
 import * as Y from 'yjs'
 import { WebsocketProvider } from 'y-websocket'
@@ -25,7 +25,7 @@ const provider = new WebsocketProvider(
 function App () {
   const yXmlFragment = ydoc.getXmlFragment('prosemirror')
   const { doc, mapping } = initProseMirrorDoc(yXmlFragment, schema)
-  const defaultState = EditorState.create({ 
+  const defaultState = EditorState.create({
     doc,
     schema,
     plugins: [
@@ -38,9 +38,9 @@ function App () {
         'Mod-Shift-z': redo
       }),
       keymap(baseKeymap),
-      reactKeys(),
+      reactKeys()
     ].concat(exampleSetup({ schema }))
-  });
+  })
 
   window.example = { ydoc, provider, yXmlFragment, pmDoc: doc }
 
@@ -48,10 +48,8 @@ function App () {
     <ProseMirror defaultState={defaultState}>
       <ProseMirrorDoc />
     </ProseMirror>
-  );
-
+  )
 }
 
 const root = createRoot(document.getElementById('root'))
 root.render(<App />)
-
